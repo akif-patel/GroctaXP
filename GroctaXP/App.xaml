@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:grocta_control="clr-namespace:GroctaXP.Controls;assembly=GroctaXP"
              mc:Ignorable="d"
              x:Class="GroctaXP.App">
 
@@ -16,11 +17,16 @@
             </Style>
 
             <!--Colors-->
-            <Color x:Key="ColorPrimary">#2D2D30</Color>
-            <Color x:Key="ColorPrimaryDark">#222224</Color>
-            <Color x:Key="ColorPrimaryLight">#9CC482</Color>
+            <!--<Color x:Key="ColorPrimary">#2D2D30</Color>
+            <Color x:Key="ColorPrimaryDark">#222224</Color>-->
+            <!--<Color x:Key="ColorPrimary">#DB4537</Color>-->
+            <Color x:Key="ColorPrimary">#AE352A</Color>
+            <Color x:Key="ColorPrimaryDark">#982C24</Color>
+            <Color x:Key="ColorPrimaryOrange">#EA8204</Color>
+            <Color x:Key="ColorPrimaryPeriwinkle">#ABB5D4</Color>
             <Color x:Key="ColorWhite">#FFFFFF</Color>
-            <Color x:Key="ColorGray">#CCCCCC</Color>
+            <Color x:Key="ColorGray">#909090</Color>
+            <Color x:Key="ColorGrayLight">#B0B0B0</Color>
             <Color x:Key="ColorAccentGray">#59595F</Color>
 
             <!--Dimenstions-->
@@ -30,18 +36,30 @@
             <x:Double x:Key="AppTextSizeLarge">14</x:Double>
             <x:Double x:Key="AppTextSizeHeader">15</x:Double>
 
-            <!--Stings-->
-            <x:String x:Key="CeliasThin">CeliasThin</x:String>
-            <x:String x:Key="CeliasRegular">CeliasRegular</x:String>
-            <x:String x:Key="CeliasBold">CeliasBold</x:String>
+            <!--Fonts-->
+            <x:String x:Key="AppFontThin">CeliasThin</x:String>
+            <x:String x:Key="AppFontRegular">CeliasRegular</x:String>
+            <x:String x:Key="AppFontBold">CeliasBold</x:String>
             
-            <!--Styles-->
+            <!--Styles - Lables-->
             <Style 
                 x:Key="LabelStyle" 
                 TargetType="Label">
-                <Setter Property="FontFamily" Value="{StaticResource CeliasRegular}" />
+                <Setter Property="FontFamily" Value="{StaticResource AppFontRegular}" />
                 <Setter Property="FontSize" Value="{StaticResource AppTextSize}" />
-                <Setter Property="TextColor" Value="{StaticResource ColorPrimary}" />
+                <Setter Property="TextColor" Value="{StaticResource ColorAccentGray}" />
+            </Style>
+            <Style 
+                x:Key="LabelStyle.Bold" 
+                TargetType="Label" 
+                BasedOn="{StaticResource LabelStyle}">
+                <Setter Property="FontFamily" Value="{StaticResource AppFontBold}" />
+            </Style>
+            <Style 
+                x:Key="LabelStyle.Thin" 
+                TargetType="Label" 
+                BasedOn="{StaticResource LabelStyle}">
+                <Setter Property="FontFamily" Value="{StaticResource AppFontThin}" />
             </Style>
             <Style 
                 x:Key="LabelStyle.Small" 
@@ -50,10 +68,63 @@
                 <Setter Property="FontSize" Value="{StaticResource AppTextSizeSmall}" />
             </Style>
             <Style 
+                x:Key="LabelStyle.Small.Bold" 
+                TargetType="Label" 
+                BasedOn="{StaticResource LabelStyle.Small}">
+                <Setter Property="FontFamily" Value="{StaticResource AppFontBold}" />
+            </Style>
+            <Style 
+                x:Key="LabelStyle.Small.Thin" 
+                TargetType="Label" 
+                BasedOn="{StaticResource LabelStyle.Small}">
+                <Setter Property="FontFamily" Value="{StaticResource AppFontThin}" />
+            </Style>
+            <Style 
+                x:Key="LabelStyle.Large" 
+                TargetType="Label" 
+                BasedOn="{StaticResource LabelStyle}">
+                <Setter Property="FontSize" Value="{StaticResource AppTextSizeLarge}" />
+            </Style>
+            <Style 
+                x:Key="LabelStyle.Large.Bold" 
+                TargetType="Label" 
+                BasedOn="{StaticResource LabelStyle.Large}">
+                <Setter Property="FontFamily" Value="{StaticResource AppFontBold}" />
+            </Style>
+            <Style 
+                x:Key="LabelStyle.Large.Thin" 
+                TargetType="Label" 
+                BasedOn="{StaticResource LabelStyle.Large}">
+                <Setter Property="FontFamily" Value="{StaticResource AppFontThin}" />
+            </Style>
+            <Style
                 x:Key="LabelStyle.MenuItem" 
                 TargetType="Label" 
                 BasedOn="{StaticResource LabelStyle}">
                 <Setter Property="TextColor" Value="{StaticResource ColorAccentGray}" />
+            </Style>
+            
+            <!--Styles - Icons-->
+            <Style 
+                x:Key="MenuIconStyle" 
+                TargetType="grocta_control:SvgImage">
+                <Setter Property="WidthRequest" Value="18" />
+                <Setter Property="HeightRequest" Value="18" />
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="Margin" Value="0, 10, 10, 10" />
+                <Setter Property="Color" Value="{StaticResource ColorGray}" />
+            </Style>
+            <Style 
+                x:Key="MenuIconStyle.Forward" 
+                TargetType="grocta_control:SvgImage">
+                <Setter Property="WidthRequest" Value="14" />
+                <Setter Property="HeightRequest" Value="14" />
+                <Setter Property="HorizontalOptions" Value="End" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="Color" Value="{StaticResource ColorGrayLight}" />
+                <Setter Property="Source" Value="resource://GroctaXP.Resources.Icons.ai_arrow_next.svg" />
             </Style>
         </ResourceDictionary>
     </Application.Resources>

@@ -63,10 +63,8 @@ namespace GroctaXP.Droid.Extensions.Renderers
                 smallTextView.SetTypeface(fontFace, TypefaceStyle.Normal);
                 largeTextView.SetTypeface(fontFace, TypefaceStyle.Normal);
 
-                //Set text color
-                //var textColor = (item.Id == bottomNavMenuView.SelectedItemId) ? tabbedPage.On<Xamarin.Forms.PlatformConfiguration.Android>().GetBarSelectedItemColor().ToAndroid() : tabbedPage.On<Xamarin.Forms.PlatformConfiguration.Android>().GetBarItemColor().ToAndroid();
-                //smallTextView.SetTextColor(textColor);
-                //largeTextView.SetTextColor(textColor);
+                smallTextView.SetTextSize(Android.Util.ComplexUnitType.Sp, 10);
+                largeTextView.SetTextSize(Android.Util.ComplexUnitType.Sp, 12);
             }
         }
 
@@ -79,9 +77,11 @@ namespace GroctaXP.Droid.Extensions.Renderers
             if (lastItemId != -1)
             {
                 SetTabItemTextColor(bottomNavMenuView.GetChildAt(lastItemId) as BottomNavigationItemView, normalColor);
+                
             }
 
             SetTabItemTextColor(bottomNavMenuView.GetChildAt(e.Item.ItemId) as BottomNavigationItemView, selectedColor);
+            //ChangeTabIcon(bottomNavMenuView.GetChildAt(e.Item.ItemId) as BottomNavigationItemView, true);
 
             this.OnNavigationItemSelected(e.Item);
             lastItemId = e.Item.ItemId;
@@ -96,5 +96,11 @@ namespace GroctaXP.Droid.Extensions.Renderers
             smallTextView.SetTextColor(textColor);
             largeTextView.SetTextColor(textColor);
         }
+
+        //void ChangeTabIcon(BottomNavigationItemView bottomNavigationItemView, bool isSelected)
+        //{
+        //    var imageView = (ImageView)bottomNavigationItemView.GetChildAt(0);
+        //    //string imageSource = IconIma;
+        //}
     }
 }
