@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:grocta_control="clr-namespace:GroctaXP.Controls;assembly=GroctaXP"
+             xmlns:grocta_extension="clr-namespace:GroctaXP.Extensions"
+             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             mc:Ignorable="d"
+             x:Class="GroctaXP.Views.MenuPage"
+             Title="Menu">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ffimageloadingsvg:SvgImageSourceConverter x:Key="ImageSourceConverter"></ffimageloadingsvg:SvgImageSourceConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <StackLayout 
+        VerticalOptions="StartAndExpand" 
+        WidthRequest="100"
+        Orientation="Vertical">
+        <!--Welcome-->
+        <StackLayout 
+            Orientation="Horizontal" 
+            BackgroundColor="{StaticResource ColorPrimaryDark}"
+            HeightRequest="60"
+            Padding="15, 0, 10, 0"
+            Margin="0, 0, 0, 0">
+            <StackLayout 
+                Orientation="Vertical"
+                VerticalOptions="Center"
+                HorizontalOptions="Start">
+                <Label 
+                    Text="Welcome," 
+                    HorizontalTextAlignment="Start" 
+                    HorizontalOptions="Start" 
+                    VerticalOptions="EndAndExpand" 
+                    TextColor="Lime"
+                    Margin="0, 0, 0, -5"
+                    Style="{StaticResource LabelStyle.Small}"/>
+
+                <Label 
+                    Text="Akif Patel" 
+                    HorizontalTextAlignment="Start"
+                    HorizontalOptions="Start"
+                    VerticalOptions="StartAndExpand"
+                    TextColor="{StaticResource ColorWhite}" 
+                    Margin="0, -5, 0, 0"
+                    Style="{StaticResource LabelStyle}"/>
+            </StackLayout>
+        </StackLayout>
+
+        <!--Locality-->
+        <StackLayout 
+            Orientation="Horizontal" 
+            BackgroundColor="{StaticResource ColorPrimary}"
+            HeightRequest="60"
+            Padding="15, 0, 0, 0"
+            Margin="0, -6, 0, 0">
+            <grocta_control:SvgImage
+                WidthRequest="20" 
+                HeightRequest="20" 
+                HorizontalOptions="Start" 
+                VerticalOptions="Center" 
+                Margin="0, 0, 10, 0"
+                Color="{StaticResource ColorWhite}"
+                Source="resource://GroctaXP.Resources.Icons.ai_current_location.svg"/>
+            <Label 
+                Text="Mira Road (E), Thane 401107" 
+                HorizontalTextAlignment="Start" 
+                HorizontalOptions="StartAndExpand" 
+                VerticalOptions="Center" 
+                Style="{StaticResource LabelStyle}"
+                TextColor="{StaticResource ColorWhite}"/>
+        </StackLayout>
+
+        <!--Action Menu-->
+        <ListView x:Name="ListViewMenu"
+                HasUnevenRows="True" 
+                WidthRequest="100" 
+                SelectionMode="None"
+                SeparatorVisibility="None" 
+                VerticalOptions="Start"
+                IsGroupingEnabled="True"
+                GroupDisplayBinding="{Binding Group}">
+            <ListView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Label 
+                            Text="{Binding Group}"
+                            HorizontalOptions="Start" 
+                            Margin="15, 10, 0, 0"
+                            Style="{StaticResource LabelStyle.Small}"
+                            TextColor="{StaticResource ColorGray}"/>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.GroupHeaderTemplate>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                            <grocta_control:SvgImage
+                                WidthRequest="18" 
+                                HeightRequest="18" 
+                                HorizontalOptions="Start" 
+                                VerticalOptions="Center" 
+                                Margin="20, 15, 15, 15"
+                                Color="{StaticResource ColorGray}"
+                                Source="{Binding Icon, Converter={StaticResource ImageSourceConverter}}"/>
+                            <!--Source="{Binding Icon, Converter={StaticResource ImageResource}}"/>-->
+                            <!--Source="{grocta_extension:ImageResource {Binding Icon}}"/>-->
+                                <!--Source="resource://GroctaXP.Resources.Icons.{Binding Title}"/>-->
+                            <Label 
+                                Text="{Binding Title}" 
+                                d:Text="{Binding .}" 
+                                Style="{StaticResource LabelStyle.MenuItem}"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="Center"
+                                Margin="0"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

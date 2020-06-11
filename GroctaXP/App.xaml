@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="GroctaXP.App">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <!--Global Styles-->
+            <Color x:Key="NavigationPrimary">#2196F3</Color>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="BarTextColor" Value="White" />
+            </Style>
+
+            <!--Colors-->
+            <Color x:Key="ColorPrimary">#2D2D30</Color>
+            <Color x:Key="ColorPrimaryDark">#222224</Color>
+            <Color x:Key="ColorPrimaryLight">#9CC482</Color>
+            <Color x:Key="ColorWhite">#FFFFFF</Color>
+            <Color x:Key="ColorGray">#CCCCCC</Color>
+            <Color x:Key="ColorAccentGray">#59595F</Color>
+
+            <!--Dimenstions-->
+            <x:Double x:Key="AppTextSize">13</x:Double>
+            <x:Double x:Key="AppTextSizeTiny">11</x:Double>
+            <x:Double x:Key="AppTextSizeSmall">12</x:Double>
+            <x:Double x:Key="AppTextSizeLarge">14</x:Double>
+            <x:Double x:Key="AppTextSizeHeader">15</x:Double>
+
+            <!--Stings-->
+            <x:String x:Key="CeliasThin">CeliasThin</x:String>
+            <x:String x:Key="CeliasRegular">CeliasRegular</x:String>
+            <x:String x:Key="CeliasBold">CeliasBold</x:String>
+            
+            <!--Styles-->
+            <Style 
+                x:Key="LabelStyle" 
+                TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource CeliasRegular}" />
+                <Setter Property="FontSize" Value="{StaticResource AppTextSize}" />
+                <Setter Property="TextColor" Value="{StaticResource ColorPrimary}" />
+            </Style>
+            <Style 
+                x:Key="LabelStyle.Small" 
+                TargetType="Label" 
+                BasedOn="{StaticResource LabelStyle}">
+                <Setter Property="FontSize" Value="{StaticResource AppTextSizeSmall}" />
+            </Style>
+            <Style 
+                x:Key="LabelStyle.MenuItem" 
+                TargetType="Label" 
+                BasedOn="{StaticResource LabelStyle}">
+                <Setter Property="TextColor" Value="{StaticResource ColorAccentGray}" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+    
+</Application>
