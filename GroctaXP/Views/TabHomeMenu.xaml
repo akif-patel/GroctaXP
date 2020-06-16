@@ -4,10 +4,14 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:grocta_control="clr-namespace:GroctaXP.Controls;assembly=GroctaXP"
-             xmlns:grocta="clr-namespace:GroctaXP.Converters"
              mc:Ignorable="d"
+             xmlns:vm="clr-namespace:GroctaXP.ViewModels"
              x:Class="GroctaXP.Views.TabHomeMenu"
              BackgroundColor="{StaticResource ColorWhite}">
+    <!--<ContentPage.BindingContext>
+        <vm:TabHomeMenuViewModel />
+    </ContentPage.BindingContext>-->
+
     <ContentPage.Content>
         <StackLayout>
             <!-- Profile -->
@@ -17,7 +21,7 @@
                 Padding="15"
                 Margin="0"
                 HorizontalOptions="FillAndExpand">
-            
+
                 <!-- User Info -->
                 <StackLayout 
                     Orientation="Vertical"
@@ -86,7 +90,7 @@
                     VerticalOptions="Center" 
                     Style="{StaticResource LabelStyle}"
                     TextColor="{StaticResource ColorWhite}"/>
-                
+
                 <grocta_control:SvgImage
                     WidthRequest="20" 
                     HeightRequest="20" 
@@ -97,250 +101,424 @@
                     Source="resource://GroctaXP.Resources.Icons.ui_current_locality.svg"/>
             </StackLayout>
 
-            <!-- My Account -->
-            <StackLayout 
-                Orientation="Horizontal" 
-                Padding="15"
+            <!-- Menu -->
+            <ScrollView
+                Padding="0"
                 Margin="0, -6, 0, 0">
                 <StackLayout 
-                    Orientation="Vertical" 
-                    HorizontalOptions="FillAndExpand"
-                    Margin="0">
-                    <Label 
-                        Text="My Account" 
-                        HorizontalOptions="Start" 
-                        VerticalOptions="Center" 
-                        Style="{StaticResource LabelStyle.Large}"
-                        TextColor="{StaticResource ColorAccentGray}"/>
-
-                    <Label 
-                        Text="Delivery Locations, Orders, Favorites, Quick Baskets &amp; Others" 
-                        HorizontalOptions="Start" 
-                        VerticalOptions="Center" 
-                        Style="{StaticResource LabelStyle.Small.Thin}"
-                        TextColor="{StaticResource ColorGray}"
-                        Margin="0, -6, 0, 0"/>
-                </StackLayout>
-                
-                <grocta_control:SvgImage
-                    WidthRequest="16" 
-                    HeightRequest="16" 
-                    HorizontalOptions="Start" 
-                    VerticalOptions="Center" 
-                    Margin="0"
-                    Color="{StaticResource ColorGray}"
-                    Source="resource://GroctaXP.Resources.Icons.ai_arrow_down.svg"/>
-            </StackLayout>
-
-            <BoxView 
-                HeightRequest="2"
-                WidthRequest="100"
-                BackgroundColor="{StaticResource ColorGray}"
-                Margin="15,-6,15,0"/>
-            
-            <!-- Help and Support -->
-            <StackLayout
-                Orientation="Vertical" 
-                Padding="15"
-                Margin="0, -6, 0, 0">
-                <StackLayout 
-                    Orientation="Horizontal" >
+                    Orientation="Vertical">
+                    <!-- My Account -->
                     <StackLayout 
+                        Orientation="Vertical" 
+                        Padding="15">
+                        <StackLayout 
+                            x:Name="ViewMenuMyAccount"
+                            Orientation="Horizontal"
+                            MinimumHeightRequest="200">
+                            <StackLayout 
+                                Orientation="Vertical" 
+                                HorizontalOptions="FillAndExpand"
+                                Margin="0">
+                                <Label 
+                                    Text="My Account" 
+                                    HorizontalOptions="Start" 
+                                    VerticalOptions="Center" 
+                                    Style="{StaticResource LabelStyle.Large}"
+                                    TextColor="{StaticResource ColorAccentGray}"/>
+
+                                <Label 
+                                    x:Name="LabelMyAccountMenuDesc"
+                                    Text="Delivery Locations, Orders History, Quick Baskets &amp; Others" 
+                                    HorizontalOptions="Start" 
+                                    VerticalOptions="Center" 
+                                    Style="{StaticResource LabelStyle.Small.Thin}"
+                                    TextColor="{StaticResource ColorGray}"
+                                    Margin="0, -6, 0, 0"/>
+                            </StackLayout>
+
+                            <grocta_control:SvgImage
+                                x:Name="ImgMyAccountMenuStateIcon"
+                                WidthRequest="16" 
+                                HeightRequest="16" 
+                                HorizontalOptions="Start" 
+                                VerticalOptions="Center" 
+                                Margin="0"
+                                Color="{StaticResource ColorAccentGray}"
+                                Source="resource://GroctaXP.Resources.Icons.ai_arrow_down.svg"/>
+
+                            <StackLayout.GestureRecognizers>
+                                <!--<TapGestureRecognizer 
+                                Command="{Binding TapCommand}"
+                                CommandParameter="MenuHelp" />-->
+                                <TapGestureRecognizer 
+                                Tapped="OnTapOpenSubMenu"
+                                CommandParameter="MenuMyAccount"/>
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+
+                        <!--<StackLayout 
                         Orientation="Vertical" 
                         HorizontalOptions="FillAndExpand"
                         Margin="0">
                         <Label 
-                            Text="Grocta Support" 
+                            Text="My Account" 
                             HorizontalOptions="Start" 
                             VerticalOptions="Center" 
                             Style="{StaticResource LabelStyle.Large}"
                             TextColor="{StaticResource ColorAccentGray}"/>
 
                         <Label 
-                            Text="Contact Us, Feedback, FAQs &amp; Share" 
+                            Text="Delivery Locations, Orders, Favorites, Quick Baskets &amp; Others" 
                             HorizontalOptions="Start" 
                             VerticalOptions="Center" 
                             Style="{StaticResource LabelStyle.Small.Thin}"
                             TextColor="{StaticResource ColorGray}"
-                            Margin="0, -6, 0, 0"
-                            IsVisible="False"/>
-                    </StackLayout>
-
-                    <grocta_control:SvgImage
-                        WidthRequest="16" 
-                        HeightRequest="16" 
-                        HorizontalOptions="Start" 
-                        VerticalOptions="Center" 
-                        Margin="0"
-                        Color="{StaticResource ColorGray}"
-                        Source="resource://GroctaXP.Resources.Icons.ai_arrow_up.svg"/>
-                </StackLayout>
-
-                <!-- Menu -->
-                <StackLayout
-                    Orientation="Vertical" 
-                    Margin="0">
-                    <!--<BoxView 
-                        HeightRequest="1"
-                        WidthRequest="100"
-                        BackgroundColor="{StaticResource ColorGrayLight}"/>-->
-
-                    <!-- FAQs -->
-                    <StackLayout 
-                        Orientation="Horizontal" 
-                        HorizontalOptions="FillAndExpand" 
-                        VerticalOptions="FillAndExpand">
-                        <grocta_control:SvgImage
-                            Style="{StaticResource MenuIconStyle}"
-                            Source="resource://GroctaXP.Resources.Icons.ai_faqs_outline.svg"/>
-                        <Label 
-                            Text="Frequently Asked Questions (FAQs)" 
-                            Style="{StaticResource LabelStyle}"
-                            HorizontalOptions="FillAndExpand"
-                            VerticalOptions="Center"/>
-                        <grocta_control:SvgImage
-                            Style="{StaticResource MenuIconStyle.Forward}"/>
-                    </StackLayout>
-
-                    <!-- Feedback -->
-                    <StackLayout 
-                        Orientation="Horizontal" 
-                        HorizontalOptions="FillAndExpand" 
-                        VerticalOptions="FillAndExpand">
-                        <grocta_control:SvgImage
-                            Style="{StaticResource MenuIconStyle}"
-                            Source="resource://GroctaXP.Resources.Icons.ai_feedback_outline.svg"/>
-                        <Label 
-                            Text="Feedback \ Review" 
-                            Style="{StaticResource LabelStyle}"
-                            HorizontalOptions="FillAndExpand"
-                            VerticalOptions="Center"/>
-                        <grocta_control:SvgImage
-                            Style="{StaticResource MenuIconStyle.Forward}"/>
-                    </StackLayout>
-                    
-                    <!-- Contact Us -->
-                    <StackLayout 
-                        Orientation="Horizontal" 
-                        HorizontalOptions="FillAndExpand" 
-                        VerticalOptions="FillAndExpand">
-                        <grocta_control:SvgImage
-                            Style="{StaticResource MenuIconStyle}"
-                            Source="resource://GroctaXP.Resources.Icons.ai_contact_us_outline.svg"/>
-                        <Label 
-                            Text="Contact Us" 
-                            Style="{StaticResource LabelStyle}"
-                            HorizontalOptions="FillAndExpand"
-                            VerticalOptions="Center"/>
-                        <grocta_control:SvgImage
-                            Style="{StaticResource MenuIconStyle.Forward}"/>
-                    </StackLayout>
-                    
-                    <!-- Share -->
-                    <!--<StackLayout 
-                        Orientation="Horizontal" 
-                        HorizontalOptions="FillAndExpand" 
-                        VerticalOptions="FillAndExpand">
-                        <grocta_control:SvgImage
-                            Style="{StaticResource MenuIconStyle}"
-                            Source="resource://GroctaXP.Resources.Icons.ai_share_app_outline.svg"/>
-                        <Label 
-                            Text="Share App" 
-                            Style="{StaticResource LabelStyle}"
-                            HorizontalOptions="FillAndExpand"
-                            VerticalOptions="Center"/>
-                        <grocta_control:SvgImage
-                            Style="{StaticResource MenuIconStyle.Forward}"/>
+                            Margin="0, -6, 0, 0"/>
                     </StackLayout>-->
+
+                        <!-- Menu -->
+                        <StackLayout
+                            x:Name="ViewMenuMyAccount_All"
+                            Orientation="Vertical" 
+                            Margin="0"
+                            VerticalOptions="Start"
+                            IsVisible="False">
+                            <!--<BoxView 
+                            HeightRequest="1"
+                            WidthRequest="100"
+                            BackgroundColor="{StaticResource ColorGrayLight}"/>-->
+
+                            <!-- Delivery Locations -->
+                            <StackLayout 
+                                Orientation="Horizontal" 
+                                HorizontalOptions="FillAndExpand" 
+                                VerticalOptions="FillAndExpand">
+                                <grocta_control:SvgImage
+                                    Style="{StaticResource MenuIconStyle}"
+                                    Source="resource://GroctaXP.Resources.Icons.ai_delivery_locations.svg"/>
+                                <Label 
+                                    Text="Delivery Locations" 
+                                    Style="{StaticResource LabelStyle}"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="Center"/>
+                                <grocta_control:SvgImage
+                                    Style="{StaticResource MenuIconStyle.Forward}"/>
+                            </StackLayout>
+
+                            <!-- Order History -->
+                            <StackLayout 
+                                Orientation="Horizontal" 
+                                HorizontalOptions="FillAndExpand" 
+                                VerticalOptions="FillAndExpand">
+                                <grocta_control:SvgImage
+                                    Style="{StaticResource MenuIconStyle}"
+                                    Source="resource://GroctaXP.Resources.Icons.ai_order_history.svg"/>
+                                <Label 
+                                    Text="Order History" 
+                                    Style="{StaticResource LabelStyle}"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="Center"/>
+                                <grocta_control:SvgImage
+                                   Style="{StaticResource MenuIconStyle.Forward}"/>
+                            </StackLayout>
+
+                            <!-- Favorites -->
+                            <StackLayout 
+                                Orientation="Horizontal" 
+                                HorizontalOptions="FillAndExpand" 
+                                VerticalOptions="FillAndExpand">
+                                <grocta_control:SvgImage
+                                    Style="{StaticResource MenuIconStyle}"
+                                    Source="resource://GroctaXP.Resources.Icons.ai_fav_groceries.svg"/>
+                                <Label 
+                                    Text="Favorites Groceries" 
+                                    Style="{StaticResource LabelStyle}"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="Center"/>
+                                <grocta_control:SvgImage
+                                 Style="{StaticResource MenuIconStyle.Forward}"/>
+                            </StackLayout>
+
+                            <!-- Quick Baskets -->
+                            <StackLayout 
+                                Orientation="Horizontal" 
+                                HorizontalOptions="FillAndExpand" 
+                                VerticalOptions="FillAndExpand">
+                                <grocta_control:SvgImage
+                                    Style="{StaticResource MenuIconStyle}"
+                                    Source="resource://GroctaXP.Resources.Icons.ai_quick_basket.svg"/>
+                                <Label 
+                                    Text="Quick Baskets" 
+                                    Style="{StaticResource LabelStyle}"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="Center"/>
+                                <grocta_control:SvgImage
+                                    Style="{StaticResource MenuIconStyle.Forward}"/>
+                            </StackLayout>
+
+                            <!-- Refund Wallet -->
+                            <StackLayout 
+                                Orientation="Horizontal" 
+                                HorizontalOptions="FillAndExpand" 
+                                VerticalOptions="FillAndExpand">
+                                <grocta_control:SvgImage
+                                    Style="{StaticResource MenuIconStyle}"
+                                    Source="resource://GroctaXP.Resources.Icons.ai_wallet.svg"/>
+                                <Label 
+                                    Text="Refund Wallet" 
+                                    Style="{StaticResource LabelStyle}"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="Center"/>
+                                <grocta_control:SvgImage
+                                    Style="{StaticResource MenuIconStyle.Forward}"/>
+                            </StackLayout>
+
+                            <!-- Offers Deals -->
+                            <!--<StackLayout 
+                                Orientation="Horizontal" 
+                                HorizontalOptions="FillAndExpand" 
+                                VerticalOptions="FillAndExpand">
+                                <grocta_control:SvgImage
+                                    Style="{StaticResource MenuIconStyle}"
+                                    Source="resource://GroctaXP.Resources.Icons.ai_share_app_outline.svg"/>
+                                <Label 
+                                    Text="Offers &amp; Deals" 
+                                    Style="{StaticResource LabelStyle}"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="Center"/>
+                                <grocta_control:SvgImage
+                                    Style="{StaticResource MenuIconStyle.Forward}"/>
+                            </StackLayout>-->
+                        </StackLayout>
+                    </StackLayout>
+
+                    <BoxView 
+                        HeightRequest="2"
+                        WidthRequest="100"
+                        BackgroundColor="{StaticResource ColorGray}"
+                        Margin="15,-6,15,0"/>
+
+                    <!-- Help and Support -->
+                    <StackLayout
+                        Orientation="Vertical" 
+                        Margin="0, -6, 0, 0"
+                        VerticalOptions="Start" 
+                        Padding="15">
+                        <StackLayout 
+                            x:Name="ViewMenuSupport"
+                            Orientation="Horizontal"
+                            MinimumHeightRequest="200">
+                            <StackLayout 
+                                Orientation="Vertical" 
+                                HorizontalOptions="FillAndExpand"
+                                Margin="0">
+                                <Label 
+                                    Text="Grocta Support" 
+                                    HorizontalOptions="Start" 
+                                    VerticalOptions="Center" 
+                                    Style="{StaticResource LabelStyle.Large}"
+                                    TextColor="{StaticResource ColorAccentGray}"/>
+
+                                <Label 
+                                    x:Name="LabelSupportMenuDesc"
+                                    Text="Contact Us, Feedback, FAQs &amp; Share" 
+                                    HorizontalOptions="Start" 
+                                    VerticalOptions="Center" 
+                                    Style="{StaticResource LabelStyle.Small.Thin}"
+                                    TextColor="{StaticResource ColorGray}"
+                                    Margin="0, -6, 0, 0"/>
+                            </StackLayout>
+
+                            <grocta_control:SvgImage
+                                x:Name="ImgSupportMenuStateIcon"
+                                WidthRequest="16" 
+                                HeightRequest="16" 
+                                HorizontalOptions="Start" 
+                                VerticalOptions="Center" 
+                                Margin="0"
+                                Color="{StaticResource ColorAccentGray}"
+                                Source="resource://GroctaXP.Resources.Icons.ai_arrow_down.svg"/>
+
+                            <StackLayout.GestureRecognizers>
+                                <!--<TapGestureRecognizer 
+                                Command="{Binding TapCommand}"
+                                CommandParameter="MenuHelp" />-->
+                                <TapGestureRecognizer 
+                                    Tapped="OnTapOpenSubMenu"
+                                    CommandParameter="MenuSupport"/>
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+
+                        <!-- Menu -->
+                        <StackLayout
+                            x:Name="ViewMenuSupport_All"
+                            Orientation="Vertical" 
+                            Margin="0"
+                            VerticalOptions="Start"
+                            IsVisible="False">
+                            <!--<BoxView 
+                            HeightRequest="1"
+                            WidthRequest="100"
+                            BackgroundColor="{StaticResource ColorGrayLight}"/>-->
+
+                            <!-- FAQs -->
+                            <StackLayout 
+                                Orientation="Horizontal" 
+                                HorizontalOptions="FillAndExpand" 
+                                VerticalOptions="FillAndExpand">
+                                <grocta_control:SvgImage
+                                    Style="{StaticResource MenuIconStyle}"
+                                    Source="resource://GroctaXP.Resources.Icons.ai_faqs_outline.svg"/>
+                                <Label 
+                                    Text="Frequently Asked Questions (FAQs)" 
+                                    Style="{StaticResource LabelStyle}"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="Center"/>
+                                <grocta_control:SvgImage
+                                    Style="{StaticResource MenuIconStyle.Forward}"/>
+                            </StackLayout>
+
+                            <!-- Feedback -->
+                            <StackLayout 
+                                Orientation="Horizontal" 
+                                HorizontalOptions="FillAndExpand" 
+                                VerticalOptions="FillAndExpand">
+                                <grocta_control:SvgImage
+                                    Style="{StaticResource MenuIconStyle}"
+                                    Source="resource://GroctaXP.Resources.Icons.ai_feedback_outline.svg"/>
+                                <Label 
+                                    Text="Feedback \ Review" 
+                                    Style="{StaticResource LabelStyle}"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="Center"/>
+                                <grocta_control:SvgImage
+                                    Style="{StaticResource MenuIconStyle.Forward}"/>
+                            </StackLayout>
+
+                            <!-- Contact Us -->
+                            <StackLayout 
+                                Orientation="Horizontal" 
+                                HorizontalOptions="FillAndExpand" 
+                                VerticalOptions="FillAndExpand">
+                                <grocta_control:SvgImage
+                                    Style="{StaticResource MenuIconStyle}"
+                                    Source="resource://GroctaXP.Resources.Icons.ai_contact_us_outline.svg"/>
+                                <Label 
+                                    Text="Contact Us" 
+                                    Style="{StaticResource LabelStyle}"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="Center"/>
+                                <grocta_control:SvgImage
+                                    Style="{StaticResource MenuIconStyle.Forward}"/>
+                            </StackLayout>
+
+                            <!-- Share -->
+                            <StackLayout 
+                                Orientation="Horizontal" 
+                                HorizontalOptions="FillAndExpand" 
+                                VerticalOptions="FillAndExpand">
+                                <grocta_control:SvgImage
+                                    Style="{StaticResource MenuIconStyle}"
+                                    Source="resource://GroctaXP.Resources.Icons.ai_share_app_outline.svg"/>
+                                <Label 
+                                    Text="Share App" 
+                                    Style="{StaticResource LabelStyle}"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="Center"/>
+                                <grocta_control:SvgImage
+                                    Style="{StaticResource MenuIconStyle.Forward}"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <BoxView 
+                        HeightRequest="2"
+                        WidthRequest="100"
+                        BackgroundColor="{StaticResource ColorGray}"
+                        Margin="15,-6,15,0"/>
+
+                    <StackLayout 
+                        Padding="15"
+                        Orientation="Horizontal"
+                        HorizontalOptions="FillAndExpand">
+                        <!-- Refer -->
+                        <Frame 
+                            BorderColor="{StaticResource ColorPrimary}"
+                            BackgroundColor="{StaticResource ColorWhite}"
+                            Padding="0"
+                            HorizontalOptions="Start"
+                            WidthRequest="180"
+                            HeightRequest="40"
+                            CornerRadius="0" 
+                            HasShadow="False">
+                            <StackLayout
+                                Orientation="Horizontal"
+                                HorizontalOptions="Fill">
+                                <StackLayout
+                                    BackgroundColor="{StaticResource ColorPrimary}"
+                                    WidthRequest="40">
+                                    <grocta_control:SvgImage
+                                        WidthRequest="20"
+                                        HeightRequest="20"
+                                        Source="resource://GroctaXP.Resources.Icons.ai_share_app_outline.svg"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="CenterAndExpand"
+                                        Color="{StaticResource ColorWhite}"/>
+                                </StackLayout>
+                                <Label 
+                                    Text="Refer &amp; Win" 
+                                    HorizontalOptions="FillAndExpand"
+                                    HorizontalTextAlignment="Center"
+                                    VerticalOptions="Center"
+                                    Margin="-6, 0, 0, 0"
+                                    Style="{StaticResource LabelStyle.Large}"
+                                    TextColor="{StaticResource ColorPrimaryDark}"/>
+                                <!--<StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="Button_Tapped"/>
+                                </StackLayout.GestureRecognizers>-->
+                            </StackLayout>
+                        </Frame>
+
+                        <!-- Rate Us -->
+                        <Frame 
+                            BorderColor="{StaticResource ColorPrimary}"
+                            BackgroundColor="{StaticResource ColorWhite}"
+                            Padding="0"
+                            HorizontalOptions="EndAndExpand"
+                            WidthRequest="180"
+                            HeightRequest="40"
+                            CornerRadius="0" 
+                            HasShadow="False">
+                            <StackLayout
+                                Orientation="Horizontal"
+                                HorizontalOptions="Fill">
+                                <StackLayout
+                                    BackgroundColor="{StaticResource ColorPrimary}"
+                                    WidthRequest="40">
+                                    <grocta_control:SvgImage
+                                        WidthRequest="20"
+                                        HeightRequest="20"
+                                        Source="resource://GroctaXP.Resources.Icons.ai_rate_us.svg"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="CenterAndExpand"
+                                        Color="{StaticResource ColorWhite}"/>
+                                </StackLayout>
+                                <Label 
+                                    Text="Rate Us" 
+                                    HorizontalOptions="FillAndExpand"
+                                    HorizontalTextAlignment="Center"
+                                    VerticalOptions="Center"
+                                    Margin="-6, 0, 0, 0"
+                                    Style="{StaticResource LabelStyle.Large}"
+                                    TextColor="{StaticResource ColorPrimaryDark}"/>
+                                <!--<StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="Button_Tapped"/>
+                                </StackLayout.GestureRecognizers>-->
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
                 </StackLayout>
-            </StackLayout>
-
-            <BoxView 
-                HeightRequest="2"
-                WidthRequest="100"
-                BackgroundColor="{StaticResource ColorGray}"
-                Margin="15,-6,15,0"/>
-
-            <StackLayout 
-                Padding="15"
-                Orientation="Horizontal"
-                HorizontalOptions="FillAndExpand">
-                <!-- Refer -->
-                <Frame 
-                    BorderColor="{StaticResource ColorPrimary}"
-                    BackgroundColor="{StaticResource ColorWhite}"
-                    Padding="0"
-                    HorizontalOptions="Start"
-                    WidthRequest="180"
-                    HeightRequest="40"
-                    CornerRadius="0" 
-                    HasShadow="False">
-                    <StackLayout
-                        Orientation="Horizontal"
-                        HorizontalOptions="Fill">
-                        <StackLayout
-                            BackgroundColor="{StaticResource ColorPrimary}"
-                            WidthRequest="40">
-                            <grocta_control:SvgImage
-                                WidthRequest="20"
-                                HeightRequest="20"
-                                Source="resource://GroctaXP.Resources.Icons.ai_share_app_outline.svg"
-                                HorizontalOptions="Center"
-                                VerticalOptions="CenterAndExpand"
-                                Color="{StaticResource ColorWhite}"/>
-                        </StackLayout>
-                        <Label 
-                            Text="Refer &amp; Win" 
-                            HorizontalOptions="FillAndExpand"
-                            HorizontalTextAlignment="Center"
-                            VerticalOptions="Center"
-                            Margin="-6, 0, 0, 0"
-                            Style="{StaticResource LabelStyle.Large}"
-                            TextColor="{StaticResource ColorPrimaryDark}"/>
-                        <!--<StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="Button_Tapped"/>
-                        </StackLayout.GestureRecognizers>-->
-                    </StackLayout>
-                </Frame>
-
-                <!-- Rate Us -->
-                <Frame 
-                    BorderColor="{StaticResource ColorPrimary}"
-                    BackgroundColor="{StaticResource ColorWhite}"
-                    Padding="0"
-                    HorizontalOptions="EndAndExpand"
-                    WidthRequest="180"
-                    HeightRequest="40"
-                    CornerRadius="0" 
-                    HasShadow="False">
-                    <StackLayout
-                        Orientation="Horizontal"
-                        HorizontalOptions="Fill">
-                        <StackLayout
-                            BackgroundColor="{StaticResource ColorPrimary}"
-                            WidthRequest="40">
-                            <grocta_control:SvgImage
-                                WidthRequest="20"
-                                HeightRequest="20"
-                                Source="resource://GroctaXP.Resources.Icons.ai_rate_us.svg"
-                                HorizontalOptions="Center"
-                                VerticalOptions="CenterAndExpand"
-                                Color="{StaticResource ColorWhite}"/>
-                        </StackLayout>
-                        <Label 
-                            Text="Rate Us" 
-                            HorizontalOptions="FillAndExpand"
-                            HorizontalTextAlignment="Center"
-                            VerticalOptions="Center"
-                            Margin="-6, 0, 0, 0"
-                            Style="{StaticResource LabelStyle.Large}"
-                            TextColor="{StaticResource ColorPrimaryDark}"/>
-                        <!--<StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="Button_Tapped"/>
-                        </StackLayout.GestureRecognizers>-->
-                    </StackLayout>
-                </Frame>
-            </StackLayout>
+            </ScrollView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

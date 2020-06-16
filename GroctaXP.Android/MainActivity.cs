@@ -13,7 +13,7 @@ using GroctaXP.Droid.Extensions.Renderers;
 
 namespace GroctaXP.Droid
 {
-    [Activity(Label = "GroctaXP", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "GroctaXP", Icon = "@mipmap/logo_grocta", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -27,8 +27,7 @@ namespace GroctaXP.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             
             CachedImageRenderer.Init(true);
-            //FFImageLoading.Svg.Forms.SvgCachedImage.Init();
-            //var ignore = typeof(SvgCachedImage);
+            CachedImageRenderer.InitImageViewHandler();
 
             LoadApplication(new App());
         }

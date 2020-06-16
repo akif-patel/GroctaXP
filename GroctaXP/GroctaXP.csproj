@@ -28,18 +28,27 @@
     <None Remove="Resources\Icons\ai_contact_us_outline.svg" />
     <None Remove="Resources\Icons\ai_current_location.svg" />
     <None Remove="Resources\Icons\ai_delivery_location.svg" />
+    <None Remove="Resources\Icons\ai_delivery_locations.svg" />
     <None Remove="Resources\Icons\ai_edit_profile.svg" />
     <None Remove="Resources\Icons\ai_expand_more.svg" />
     <None Remove="Resources\Icons\ai_faqs.svg" />
     <None Remove="Resources\Icons\ai_faqs_outline.svg" />
+    <None Remove="Resources\Icons\ai_fav_groceries.svg" />
     <None Remove="Resources\Icons\ai_feedback.svg" />
     <None Remove="Resources\Icons\ai_feedback_outline.svg" />
+    <None Remove="Resources\Icons\ai_order_history.svg" />
+    <None Remove="Resources\Icons\ai_quick_basket.svg" />
     <None Remove="Resources\Icons\ai_rate_us.svg" />
     <None Remove="Resources\Icons\ai_share_app.svg" />
     <None Remove="Resources\Icons\ai_share_app_outline.svg" />
+    <None Remove="Resources\Icons\ai_wallet.svg" />
     <None Remove="Resources\Icons\ui_current_locality.svg" />
     <None Remove="Resources\Icons\ui_user_email.svg" />
     <None Remove="Resources\Icons\ui_user_phone.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Icons\ai_quick_basket.svg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -52,15 +61,19 @@
     <EmbeddedResource Include="Resources\Icons\ai_arrow_up.svg" />
     <EmbeddedResource Include="Resources\Icons\ai_contact_us.svg" />
     <EmbeddedResource Include="Resources\Icons\ai_contact_us_outline.svg" />
+    <EmbeddedResource Include="Resources\Icons\ai_delivery_locations.svg" />
     <EmbeddedResource Include="Resources\Icons\ai_edit_profile.svg" />
     <EmbeddedResource Include="Resources\Icons\ai_expand_more.svg" />
     <EmbeddedResource Include="Resources\Icons\ai_faqs.svg" />
     <EmbeddedResource Include="Resources\Icons\ai_faqs_outline.svg" />
+    <EmbeddedResource Include="Resources\Icons\ai_fav_groceries.svg" />
     <EmbeddedResource Include="Resources\Icons\ai_feedback.svg" />
     <EmbeddedResource Include="Resources\Icons\ai_feedback_outline.svg" />
+    <EmbeddedResource Include="Resources\Icons\ai_order_history.svg" />
     <EmbeddedResource Include="Resources\Icons\ai_rate_us.svg" />
     <EmbeddedResource Include="Resources\Icons\ai_share_app.svg" />
     <EmbeddedResource Include="Resources\Icons\ai_share_app_outline.svg" />
+    <EmbeddedResource Include="Resources\Icons\ai_wallet.svg" />
     <EmbeddedResource Include="Resources\Icons\ui_current_locality.svg" />
     <EmbeddedResource Include="Resources\Icons\ui_user_email.svg" />
     <EmbeddedResource Include="Resources\Icons\ui_user_phone.svg" />

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using FFImageLoading.Forms;
+using FFImageLoading.Svg.Forms;
+using GroctaXP.Controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +18,48 @@ namespace GroctaXP.Views
         public TabHomeMenu()
         {
             InitializeComponent();
+        }
+
+        void OnTapOpenSubMenu(object sender, EventArgs args)
+        {
+            TappedEventArgs tappedEventArgs = (TappedEventArgs) args;
+
+            if (tappedEventArgs.Parameter.Equals("MenuSupport"))
+            {
+                View subMenuView = ((View)this.FindByName("ViewMenuSupport_All"));
+                SvgImage icon = (SvgImage)subMenuView.FindByName("ImgSupportMenuStateIcon");
+                Label menuDesc = (Label)subMenuView.FindByName("LabelSupportMenuDesc");
+
+                subMenuView.IsVisible = !subMenuView.IsVisible;
+                if (subMenuView.IsVisible)
+                {
+                    menuDesc.Text = "All the support you need";
+                    icon.Source = new EmbeddedResourceImageSource(new Uri("resource://GroctaXP.Resources.Icons.ai_arrow_up.svg"));
+                }
+                else
+                {
+                    menuDesc.Text = "Contact Us, Feedback, FAQs & Share";
+                    icon.Source = new EmbeddedResourceImageSource(new Uri("resource://GroctaXP.Resources.Icons.ai_arrow_down.svg"));
+                }
+            }
+            else if (tappedEventArgs.Parameter.Equals("MenuMyAccount"))
+            {
+                View subMenuView = ((View)this.FindByName("ViewMenuMyAccount_All"));
+                SvgImage icon = (SvgImage)subMenuView.FindByName("ImgMyAccountMenuStateIcon");
+                Label menuDesc = (Label)subMenuView.FindByName("LabelMyAccountMenuDesc");
+
+                subMenuView.IsVisible = !subMenuView.IsVisible;
+                if (subMenuView.IsVisible)
+                {
+                    menuDesc.Text = "All your account details";
+                    icon.Source = new EmbeddedResourceImageSource(new Uri("resource://GroctaXP.Resources.Icons.ai_arrow_up.svg"));
+                }
+                else
+                {
+                    menuDesc.Text = "Delivery Locations, Orders, Quick Baskets & Others";
+                    icon.Source = new EmbeddedResourceImageSource(new Uri("resource://GroctaXP.Resources.Icons.ai_arrow_down.svg"));
+                }
+            }
         }
     }
 }
