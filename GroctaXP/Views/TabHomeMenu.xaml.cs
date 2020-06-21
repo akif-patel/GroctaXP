@@ -18,6 +18,12 @@ namespace GroctaXP.Views
         public TabHomeMenu()
         {
             InitializeComponent();
+
+            if (Application.Current.Properties["EmailAddress"] != null)
+                lblEmail.Text =  Application.Current.Properties["EmailAddress"].ToString();
+
+            if (Application.Current.Properties["FirstName"] != null)
+                LabelUserName.Text = Application.Current.Properties["FirstName"].ToString() + " " + Application.Current.Properties["LastName"].ToString();
         }
 
         void OnTapOpenSubMenu(object sender, EventArgs args)

@@ -29,7 +29,7 @@
                     HorizontalOptions="Start">
                     <Label
                         x:Name="LabelUserName"
-                        Text="AKIF ANWAR PATEL"
+                        Text=""
                         HorizontalTextAlignment="Start"
                         HorizontalOptions="Start"
                         VerticalOptions="StartAndExpand"
@@ -49,6 +49,7 @@
                             Source="resource://GroctaXP.Resources.Icons.ui_user_email.svg"/>
 
                         <Label 
+                            x:Name="lblEmail"
                             Text="akif.patel@gmail.com" 
                             TextColor="{StaticResource ColorWhite}"
                             Style="{StaticResource LabelStyle.Small}"/>
