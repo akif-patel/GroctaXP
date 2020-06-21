@@ -15,7 +15,8 @@ namespace GroctaXP
 
             DependencyService.Register<MockDataStore>();
             //MainPage = new MainPage();
-            MainPage = new MainPageTabbed();
+            // MainPage = new MainPageTabbed();
+            MainPage = new LoginPage();
         }
 
         protected override void OnStart()
