@@ -27,6 +27,7 @@ namespace GroctaXP.Views
         {
             InitializeComponent();
             store = AccountStore.Create();
+           
             // On<Xamarin.Forms.PlatformConfiguration.Android>().SetToolbarPlacement(Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ToolbarPlacement.Bottom);
         }
 
@@ -100,7 +101,9 @@ namespace GroctaXP.Views
                     Application.Current.Properties.Remove("DisplayName");
                     Application.Current.Properties.Remove("EmailAddress");
                     Application.Current.Properties.Remove("ProfilePicture");
+                    Application.Current.Properties.Remove("IsAuthenticate");
 
+                    Application.Current.Properties.Add("IsAuthenticate", true);
                     Application.Current.Properties.Add("Id", facebookEmail.Id);
                     Application.Current.Properties.Add("FirstName", facebookEmail.First_Name);
                     Application.Current.Properties.Add("LastName", facebookEmail.Last_Name);
@@ -140,7 +143,9 @@ namespace GroctaXP.Views
                     Application.Current.Properties.Remove("DisplayName");
                     Application.Current.Properties.Remove("EmailAddress");
                     Application.Current.Properties.Remove("ProfilePicture");
+                    Application.Current.Properties.Remove("IsAuthenticate");
 
+                    Application.Current.Properties.Add("IsAuthenticate", true);
                     Application.Current.Properties.Add("Id", user.Id);
                     Application.Current.Properties.Add("FirstName", user.GivenName);
                     Application.Current.Properties.Add("LastName", user.FamilyName);
@@ -148,8 +153,8 @@ namespace GroctaXP.Views
                     Application.Current.Properties.Add("EmailAddress", user.Email);
                     Application.Current.Properties.Add("ProfilePicture", user.Picture);
 
-                    await Application.Current.MainPage.Navigation.PushModalAsync(new MainPageTabbed());
-                   // await Navigation.PushAsync(new NavigationPage(new MainPageTabbed()));
+                    //Load Home Page
+                    Application.Current.MainPage = new MainPageTabbed();
                 }
             }
         }
