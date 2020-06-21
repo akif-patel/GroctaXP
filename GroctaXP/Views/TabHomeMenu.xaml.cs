@@ -1,6 +1,7 @@
 ﻿using FFImageLoading.Forms;
 using FFImageLoading.Svg.Forms;
 using GroctaXP.Controls;
+using GroctaXP.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,11 @@ namespace GroctaXP.Views
 
             if (Application.Current.Properties["FirstName"] != null)
                 LabelUserName.Text = Application.Current.Properties["FirstName"].ToString() + " " + Application.Current.Properties["LastName"].ToString();
+
+            var data = DependencyService.Get<IDeviceInfo>().GetMyPhoneNumber();
+            if (data != null)
+                lblMobileNumber.Text = data;
+
         }
 
         void OnTapOpenSubMenu(object sender, EventArgs args)

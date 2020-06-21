@@ -50,7 +50,7 @@
 
                         <Label 
                             x:Name="lblEmail"
-                            Text="akif.patel@gmail.com" 
+                            Text="" 
                             TextColor="{StaticResource ColorWhite}"
                             Style="{StaticResource LabelStyle.Small}"/>
 
@@ -62,7 +62,8 @@
                             Source="resource://GroctaXP.Resources.Icons.ui_user_phone.svg"/>
 
                         <Label 
-                            Text="9967904881"   
+                            x:Name="lblMobileNumber"
+                            Text=""   
                             TextColor="{StaticResource ColorWhite}"
                             Style="{StaticResource LabelStyle.Small}"/>
                     </StackLayout>
