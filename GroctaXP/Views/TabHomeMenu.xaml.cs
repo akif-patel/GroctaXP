@@ -33,7 +33,7 @@ namespace GroctaXP.Views
                 subMenuView.IsVisible = !subMenuView.IsVisible;
                 if (subMenuView.IsVisible)
                 {
-                    menuDesc.Text = "All the support you need";
+                    menuDesc.Text = "All the support you need from Grocta";
                     icon.Source = new EmbeddedResourceImageSource(new Uri("resource://GroctaXP.Resources.Icons.ai_arrow_up.svg"));
                 }
                 else
@@ -51,7 +51,7 @@ namespace GroctaXP.Views
                 subMenuView.IsVisible = !subMenuView.IsVisible;
                 if (subMenuView.IsVisible)
                 {
-                    menuDesc.Text = "All your account details";
+                    menuDesc.Text = "All the account information with Grocta";
                     icon.Source = new EmbeddedResourceImageSource(new Uri("resource://GroctaXP.Resources.Icons.ai_arrow_up.svg"));
                 }
                 else

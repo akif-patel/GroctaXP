@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:grocta_control="clr-namespace:GroctaXP.Controls;assembly=GroctaXP"
+             xmlns:toucheff="clr-namespace:TouchEffect;assembly=TouchEffect"
              mc:Ignorable="d"
              xmlns:vm="clr-namespace:GroctaXP.ViewModels"
              x:Class="GroctaXP.Views.TabHomeMenu"
@@ -114,7 +115,9 @@
                         <StackLayout 
                             x:Name="ViewMenuMyAccount"
                             Orientation="Horizontal"
-                            MinimumHeightRequest="200">
+                            MinimumHeightRequest="200"
+                            toucheff:TouchEff.NativeAnimation="True"
+                            toucheff:TouchEff.NativeAnimationColor="{StaticResource ColorPrimary}">
                             <StackLayout 
                                 Orientation="Vertical" 
                                 HorizontalOptions="FillAndExpand"
@@ -307,7 +310,8 @@
                         <StackLayout 
                             x:Name="ViewMenuSupport"
                             Orientation="Horizontal"
-                            MinimumHeightRequest="200">
+                            MinimumHeightRequest="200"
+                            toucheff:TouchEff.NativeAnimation="True">
                             <StackLayout 
                                 Orientation="Vertical" 
                                 HorizontalOptions="FillAndExpand"
@@ -517,6 +521,14 @@
                             </StackLayout>
                         </Frame>
                     </StackLayout>
+
+                    <Label 
+                        Text="App Version: 1.0.0" 
+                        HorizontalTextAlignment="Center" 
+                        HorizontalOptions="FillAndExpand" 
+                        Style="{StaticResource LabelStyle}"
+                        TextColor="{StaticResource ColorAccentGray}"/>
+
                 </StackLayout>
             </ScrollView>
         </StackLayout>

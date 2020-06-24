@@ -136,10 +136,4 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
-  <ItemGroup>
-    <ProjectReference Include="..\GroctaXP\GroctaXP.csproj">
-      <Project>{6FF74DBC-2D8C-46FC-BE64-DFDBE2A1F793}</Project>
-      <Name>GroctaXP</Name>
-    </ProjectReference>
-  </ItemGroup>
 </Project>
