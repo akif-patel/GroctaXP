@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:grocta_controls="clr-namespace:GroctaXP.Controls;assembly=GroctaXP"
+             xmlns:toucheff="clr-namespace:TouchEffect;assembly=TouchEffect"
+             xmlns:effects="clr-namespace:GroctaXP.Extensions.Effects"
+             mc:Ignorable="d"
+             x:Class="GroctaXP.Controls.ImageButton">
+  <ContentView.Content>
+        <Frame 
+            HasShadow="True"
+            CornerRadius="0"
+            BorderColor="{StaticResource ColorPrimary}"
+            Padding="0">
+            <StackLayout
+                Orientation="Horizontal">
+                <grocta_controls:SvgImage
+                    x:Name="ButtonIconSvg"
+                    WidthRequest="26"
+                    HeightRequest="26"
+                    Margin="10,0,10,0"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Start"
+                    Style="{StaticResource MenuIconStyle}"
+                    IsVisible="False"/>
+
+                <Image
+                    x:Name="ButtonIconPng"
+                    WidthRequest="26"
+                    HeightRequest="26"
+                    Margin="10,0,10,0"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Start"
+                    IsVisible="False"
+                    effects:ImageTintEffect.TintColor="Black"/>
+
+                <BoxView
+                    WidthRequest="1"
+                    HeightRequest="26"
+                    VerticalOptions="FillAndExpand"
+                    BackgroundColor="{StaticResource ColorPrimary}"
+                    Margin="-6,10,0,10"/>
+
+                <Label 
+                    x:Name="ButtonText"
+                    Text="Google" 
+                    HorizontalTextAlignment="Center"
+                    HorizontalOptions="FillAndExpand" 
+                    VerticalOptions="Center" 
+                    Margin="0,0,10,0"
+                    Style="{StaticResource LabelStyle.Large}"
+                    TextColor="{StaticResource ColorPrimary}"/>
+            </StackLayout>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

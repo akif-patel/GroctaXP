@@ -1,0 +1,46 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_image_button"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    android:elevation="5dp">
+    <RelativeLayout 
+        android:theme="@style/Grocta_Button_Flat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/image_button_icon"
+            android:contentDescription="Icon"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:src="@mipmap/ai_tab_store"
+            android:tint="@color/colorPrimary"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:clickable="false"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            android:layout_toRightOf="@id/image_button_icon"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:clickable="false"/>
+
+        <TextView
+            android:id="@+id/image_button_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/image_button_icon"
+            android:textColor="@color/colorPrimary"
+            android:gravity="center_horizontal"
+            android:layout_centerVertical="true"
+            android:text="@string/abc_action_mode_done"
+            android:clickable="false"/>
+    </RelativeLayout>
+</LinearLayout>>

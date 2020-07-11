@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:grocta_control="clr-namespace:GroctaXP.Controls"
+    mc:Ignorable="d"
+    x:Class="GroctaXP.Views.SplashScreenPage">
+    <ContentPage.Content>
+        <StackLayout
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            BackgroundColor="{StaticResource ColorPrimary}"
+            Orientation="Vertical"
+            Padding="30">
+
+            <Label 
+                Text="Welcome to Quick and Secure Sign-In" 
+                HorizontalTextAlignment="Center" 
+                HorizontalOptions="FillAndExpand" 
+                Style="{StaticResource LabelStyle}"
+                TextColor="{StaticResource ColorWhite}"/>
+
+            <Image
+                HeightRequest="128"
+                WidthRequest="128"
+                Source="logo_grocta.png"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"/>
+
+            <Label 
+                Text="Sign-In with" 
+                HorizontalTextAlignment="Center" 
+                HorizontalOptions="FillAndExpand" 
+                VerticalOptions="End"
+                Style="{StaticResource LabelStyle}"
+                TextColor="{StaticResource ColorWhite}"/>
+            
+            <grocta_control:ImageButton
+                Source="ui_google"
+                Text="GOOGLE"
+                IconSize="32"
+                VerticalOptions="End"
+                TextColor="{StaticResource ColorGoogleIcon}"
+                BackgroundColor="{StaticResource ColorWhite}"/>
+
+            <grocta_control:ImageButton
+                Source="ui_facebook"
+                Text="FACEBOOK"
+                IconSize="32"
+                VerticalOptions="End"
+                TextColor="{StaticResource ColorFacebookIcon}"
+                BackgroundColor="{StaticResource ColorWhite}"
+                Margin="0, 10, 0, 0"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

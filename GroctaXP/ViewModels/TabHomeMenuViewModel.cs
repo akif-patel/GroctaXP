@@ -1,33 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace GroctaXP.ViewModels
 {
-    public class TabHomeMenuViewModel : BaseViewModel
+    public class TabHomeMenuViewModel : INotifyPropertyChanged
     {
-        //private ICommand tapCommand;
+        string message = string.Empty;
+        public string Message
+        {
+            get { return message; }
+            set
+            {
+                message = value;
+                PropertyChanged?.Invoke(this, new System.ComponentModel.PropertyChangedEventArgs("Message"));
+            }
+        }
 
-        //public ICommand TapCommand
-        //{
-        //    get { return tapCommand; }
-        //}
+        public Command MyCommand { get; private set; }
 
-        //public TabHomeMenuViewModel()
-        //{
-        //    // configure the TapCommand with a method
-        //    tapCommand = new Command(OnTapped);
-        //}
+        public TabHomeMenuViewModel()
+        {
+            // configure the TapCommand with a method
 
-        //void OnTapped(object sender, TappedEventArgs e)
-        //{
-        //    //taps++;
-        //    System.Diagnostics.Debug.WriteLine("parameter: " + s);
-        //    //NumberOfTapsTapped = String.Format("{0} tap{1} so far!",
-        //    //    taps,
-        //    //    taps == 1 ? "" : "s");
-        //}
+            Message = "Waiting";
+            MyCommand = new Command(UpdateVersion);
+        }
+
+        private void UpdateVersion()
+        {
+            Message += "Clicked ";
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

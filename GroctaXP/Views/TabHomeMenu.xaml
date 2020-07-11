@@ -9,9 +9,9 @@
              xmlns:vm="clr-namespace:GroctaXP.ViewModels"
              x:Class="GroctaXP.Views.TabHomeMenu"
              BackgroundColor="{StaticResource ColorWhite}">
-    <!--<ContentPage.BindingContext>
+    <ContentPage.BindingContext>
         <vm:TabHomeMenuViewModel />
-    </ContentPage.BindingContext>-->
+    </ContentPage.BindingContext>
 
     <ContentPage.Content>
         <StackLayout>
@@ -110,14 +110,14 @@
                     Orientation="Vertical">
                     <!-- My Account -->
                     <StackLayout 
-                        Orientation="Vertical" 
-                        Padding="15">
+                        Orientation="Vertical">
                         <StackLayout 
                             x:Name="ViewMenuMyAccount"
                             Orientation="Horizontal"
-                            MinimumHeightRequest="200"
+                            MinimumHeightRequest="200" 
+                            Padding="15"
                             toucheff:TouchEff.NativeAnimation="True"
-                            toucheff:TouchEff.NativeAnimationColor="{StaticResource ColorPrimary}">
+                            toucheff:TouchEff.NativeAnimationColor="{StaticResource ColorPrimaryRipple}">
                             <StackLayout 
                                 Orientation="Vertical" 
                                 HorizontalOptions="FillAndExpand"
@@ -149,14 +149,19 @@
                                 Color="{StaticResource ColorAccentGray}"
                                 Source="resource://GroctaXP.Resources.Icons.ai_arrow_down.svg"/>
 
-                            <StackLayout.GestureRecognizers>
-                                <!--<TapGestureRecognizer 
+                            <!--<StackLayout.GestureRecognizers>
+                                --><!--<TapGestureRecognizer 
                                 Command="{Binding TapCommand}"
-                                CommandParameter="MenuHelp" />-->
+                                CommandParameter="MenuHelp" />--><!--
                                 <TapGestureRecognizer 
                                 Tapped="OnTapOpenSubMenu"
                                 CommandParameter="MenuMyAccount"/>
-                            </StackLayout.GestureRecognizers>
+                            </StackLayout.GestureRecognizers>-->
+
+                            <StackLayout.Effects>
+                                <toucheff:TouchEff 
+                                    Completed="TouchEff_Completed"/>
+                            </StackLayout.Effects>
                         </StackLayout>
 
                         <!--<StackLayout 
@@ -305,13 +310,14 @@
                     <StackLayout
                         Orientation="Vertical" 
                         Margin="0, -6, 0, 0"
-                        VerticalOptions="Start" 
-                        Padding="15">
+                        VerticalOptions="Start">
                         <StackLayout 
                             x:Name="ViewMenuSupport"
                             Orientation="Horizontal"
-                            MinimumHeightRequest="200"
-                            toucheff:TouchEff.NativeAnimation="True">
+                            MinimumHeightRequest="200"                            
+                            toucheff:TouchEff.NativeAnimation="True"
+                            toucheff:TouchEff.NativeAnimationColor="{StaticResource ColorPrimaryRipple}"
+                            Padding="15">
                             <StackLayout 
                                 Orientation="Vertical" 
                                 HorizontalOptions="FillAndExpand"
@@ -477,9 +483,6 @@
                                     Margin="-6, 0, 0, 0"
                                     Style="{StaticResource LabelStyle.Large}"
                                     TextColor="{StaticResource ColorPrimaryDark}"/>
-                                <!--<StackLayout.GestureRecognizers>
-                                    <TapGestureRecognizer Tapped="Button_Tapped"/>
-                                </StackLayout.GestureRecognizers>-->
                             </StackLayout>
                         </Frame>
 
@@ -515,15 +518,20 @@
                                     Margin="-6, 0, 0, 0"
                                     Style="{StaticResource LabelStyle.Large}"
                                     TextColor="{StaticResource ColorPrimaryDark}"/>
-                                <!--<StackLayout.GestureRecognizers>
-                                    <TapGestureRecognizer Tapped="Button_Tapped"/>
-                                </StackLayout.GestureRecognizers>-->
                             </StackLayout>
                         </Frame>
                     </StackLayout>
 
+                    <grocta_control:ImageButton
+                        Source="ui_google"
+                        Margin="15"
+                        Command="{Binding MyCommand}"
+                        Text="GOOGLE"
+                        IconSize="32"/>
+
                     <Label 
-                        Text="App Version: 1.0.0" 
+                        x:Name="LabelAppVersion"
+                        Text="{Binding Message}" 
                         HorizontalTextAlignment="Center" 
                         HorizontalOptions="FillAndExpand" 
                         Style="{StaticResource LabelStyle}"

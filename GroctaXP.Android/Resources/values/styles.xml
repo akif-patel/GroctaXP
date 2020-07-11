@@ -29,4 +29,20 @@
   <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
     <item name="colorAccent">#FF4081</item>
   </style>
+
+  <style name="SelectableItemTheme">
+    <item name="colorControlHighlight">@color/colorPrimaryRipple</item>
+  </style>
+  
+  <style name="SelectableItemBackground">
+    <item name="android:theme">@style/SelectableItemTheme</item>
+    <item name="android:background">?android:attr/selectableItemBackground</item>
+  </style>
+
+  <style name="Grocta_Button_Flat">
+    <item name="android:clickable">true</item>
+    <item name="android:background">?android:attr/selectableItemBackground</item>
+    <item name="colorControlHighlight">@color/colorPrimaryRipple</item>
+    <item name="background">@color/colorWhite</item>
+  </style>
 </resources>

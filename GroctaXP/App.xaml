@@ -24,10 +24,13 @@
             <Color x:Key="ColorPrimaryDark">#982C24</Color>
             <Color x:Key="ColorPrimaryOrange">#EA8204</Color>
             <Color x:Key="ColorPrimaryPeriwinkle">#ABB5D4</Color>
+            <Color x:Key="ColorPrimaryRipple">#C1807C</Color>
             <Color x:Key="ColorWhite">#FFFFFF</Color>
             <Color x:Key="ColorGray">#909090</Color>
             <Color x:Key="ColorGrayLight">#B0B0B0</Color>
             <Color x:Key="ColorAccentGray">#59595F</Color>
+            <Color x:Key="ColorGoogleIcon">#4CAF50</Color>
+            <Color x:Key="ColorFacebookIcon">#0781DD</Color>
 
             <!--Dimenstions-->
             <x:Double x:Key="AppTextSize">13</x:Double>

@@ -17,6 +17,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controls\ImageButton_Bkp.xaml.cs" />
+    <Compile Remove="Views\SplashScreenPage.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Controls\ImageButton_Bkp.xaml" />
+    <EmbeddedResource Remove="Views\SplashScreenPage.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Resources\Fonts\Celias-Bold.ttf" />
     <None Remove="Resources\Fonts\Celias-Medium.ttf" />
     <None Remove="Resources\Fonts\Celias.ttf" />
@@ -89,10 +99,31 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Resources\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Views\TabWelcomeUserInfo.xaml.cs">
+      <DependentUpon>TabWelcomeUserInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\TabWelcomeSplash.xaml.cs">
+      <DependentUpon>TabWelcomeSplash.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\MainPageTabbed.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\TabHomeMenu.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\WelcomePageTabbed.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

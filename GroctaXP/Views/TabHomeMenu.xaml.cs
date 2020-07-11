@@ -61,5 +61,10 @@ namespace GroctaXP.Views
                 }
             }
         }
+
+        private void TouchEff_Completed(VisualElement sender, TouchEffect.EventArgs.TouchCompletedEventArgs args)
+        {
+            Application.Current.MainPage.DisplayAlert("Tap!", "The Completed event was fired", "Cancel");
+        }
     }
 }

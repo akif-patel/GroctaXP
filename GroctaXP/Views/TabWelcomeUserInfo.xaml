@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:grocta_control="clr-namespace:GroctaXP.Controls;assembly=GroctaXP"
+             xmlns:ncontrols="clr-namespace:NControl.Controls;assembly=NControl.Controls"
+             mc:Ignorable="d"
+             xmlns:vm="clr-namespace:GroctaXP.ViewModels"
+             x:Class="GroctaXP.Views.TabWelcomeUserInfo"
+             BackgroundColor="{StaticResource ColorPrimaryDark}">
+    <ContentPage.BindingContext>
+        <vm:WelcomePageViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            Orientation="Vertical"
+            Padding="30">
+
+            <Label 
+                Text="Let's verify yourself" 
+                HorizontalTextAlignment="Center" 
+                HorizontalOptions="FillAndExpand" 
+                Style="{StaticResource LabelStyle.Large}"
+                TextColor="{StaticResource ColorWhite}"
+                Margin="0, 0, 0, 30"/>
+
+            <StackLayout 
+                Orientation="Vertical"
+                VerticalOptions="StartAndExpand"
+                HorizontalOptions="Center"
+                Padding="20">
+                <ncontrols:FloatingLabelControl
+                    Placeholder="First Name*"
+                    Text="First Name"
+                    PlaceholderColor="{StaticResource ColorWhite}"
+                    PlaceholderFocusedColor="{StaticResource ColorWhite}"
+                    TextColor="{StaticResource ColorWhite}"
+                    LabelFontFamily="Celias.ttf"
+                    FontFamily="Celias.ttf"
+                    LabelFontSize="13"
+                    PostfixColor="White"/>
+
+                <ncontrols:FloatingLabelControl
+                    Placeholder="Last Name*"
+                    Text="First Name"
+                    PlaceholderColor="{StaticResource ColorWhite}"
+                    PlaceholderFocusedColor="{StaticResource ColorWhite}"
+                    TextColor="{StaticResource ColorWhite}"
+                    LabelFontFamily="Celias.ttf"
+                    FontFamily="Celias.ttf"
+                    LabelFontSize="13"
+                    PostfixColor="White"/>
+
+                <ncontrols:FloatingLabelControl
+                    Placeholder="Email*"
+                    Text="Email"
+                    PlaceholderColor="{StaticResource ColorWhite}"
+                    PlaceholderFocusedColor="{StaticResource ColorWhite}"
+                    TextColor="{StaticResource ColorWhite}"
+                    LabelFontFamily="Celias.ttf"
+                    FontFamily="Celias.ttf"
+                    LabelFontSize="13"
+                    PostfixColor="White">
+                </ncontrols:FloatingLabelControl>
+
+                <ncontrols:FloatingLabelControl
+                    Placeholder="Phone*"
+                    Text="Phone"
+                    PlaceholderColor="{StaticResource ColorWhite}"
+                    PlaceholderFocusedColor="{StaticResource ColorWhite}"
+                    TextColor="{StaticResource ColorWhite}"
+                    LabelFontFamily="Celias.ttf"
+                    FontFamily="Celias.ttf"
+                    LabelFontSize="13"
+                    PostfixColor="White"/>
+            </StackLayout>
+            
+            <grocta_control:ImageButton
+                Source="ic_app_person_pin"
+                Text="Add a Delivery Address"
+                IconSize="32"
+                VerticalOptions="End"
+                TextColor="{StaticResource ColorPrimaryDark}"
+                TintColor="{StaticResource ColorPrimaryDark}"
+                BackgroundColor="{StaticResource ColorWhite}"
+                Command="{Binding CommandGoogleLogin}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

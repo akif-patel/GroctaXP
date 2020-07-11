@@ -29,6 +29,7 @@ namespace GroctaXP.Droid
             CachedImageRenderer.Init(true);
             CachedImageRenderer.InitImageViewHandler();
 
+            Console.WriteLine(this.PackageName);
             LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

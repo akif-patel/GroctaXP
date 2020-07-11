@@ -6,22 +6,24 @@ using Android.Support.Design.Widget;
 using Android.Views;
 using Android.Widget;
 using GroctaXP.Droid.Extensions.Renderers;
+using System.ComponentModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Xamarin.Forms.Platform.Android.AppCompat;
+using grocta_ctl = GroctaXP.Controls;
 //using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 
-[assembly: ExportRenderer(typeof(Xamarin.Forms.TabbedPage), typeof(GroctaTabbedPageRenderer))]
+[assembly: ExportRenderer(typeof(grocta_ctl.TabLayout), typeof(GroctaTabLayoutRenderer))]
 namespace GroctaXP.Droid.Extensions.Renderers
 {
-    public class GroctaTabbedPageRenderer : TabbedPageRenderer
+    public class GroctaTabLayoutRenderer : TabbedPageRenderer
     {
         private Xamarin.Forms.TabbedPage tabbedPage;
         private BottomNavigationView bottomNavigationView;
         //private IMenuItem lastItemSelected;
         int lastItemId = -1;
 
-        public GroctaTabbedPageRenderer(Context ctx) : base(ctx)
+        public GroctaTabLayoutRenderer(Context ctx) : base(ctx)
         { }
 
         protected override void OnElementChanged(ElementChangedEventArgs<TabbedPage> e)
@@ -41,8 +43,6 @@ namespace GroctaXP.Droid.Extensions.Renderers
             {
                 bottomNavigationView.NavigationItemSelected -= BottomNavigationView_NavigationItemSelected;
             }
-
-            //bottomNavigationView.Visibility = ViewStates.Gone;
         }
 
         //Change Tab font
@@ -98,10 +98,11 @@ namespace GroctaXP.Droid.Extensions.Renderers
             largeTextView.SetTextColor(textColor);
         }
 
-        //void ChangeTabIcon(BottomNavigationItemView bottomNavigationItemView, bool isSelected)
-        //{
-        //    var imageView = (ImageView)bottomNavigationItemView.GetChildAt(0);
-        //    //string imageSource = IconIma;
-        //}
+        protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            base.OnElementPropertyChanged(sender, e);
+
+            bottomNavigationView.Visibility = ((grocta_ctl.TabLayout)sender).HideBar ? ViewStates.Gone : ViewStates.Visible;
+        }
     }
 }

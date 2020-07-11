@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="2dp"
+    android:background="@color/colorWhite">
+    <RelativeLayout 
+        android:id="@+id/image_button"
+        android:theme="@style/Grocta_Button_Flat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+        <ImageView
+            android:id="@+id/image_button_icon"
+            android:contentDescription="Icon"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:clickable="false"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ai_tab_search"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            android:layout_toRightOf="@id/image_button_icon"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:clickable="false"/>
+
+        <TextView
+            android:id="@+id/image_button_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/image_button_icon"
+            android:textColor="@color/colorPrimary"
+            android:gravity="center_horizontal"
+            android:layout_centerVertical="true"
+            android:text="@string/abc_action_mode_done"
+            android:clickable="false"
+            android:background="@android:color/transparent"/>
+    </RelativeLayout>
+</LinearLayout>

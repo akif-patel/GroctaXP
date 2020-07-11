@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="launcher_background">#FFFFFF</color>
-    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimary">#AE352A</color>
     <color name="colorPrimaryDark">#982C24</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimaryOrange">#EA8204</color>
+    <color name="colorPrimaryPeriwinkle">#ABB5D4</color>
+    <color name="colorPrimaryRipple">#C1807C</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorGray">#909090</color>
+    <color name="colorGrayLight">#B0B0B0</color>
+    <color name="colorAccentGray">#59595F</color>
     <color name="colorStatusBar">#882720</color>
 </resources>
