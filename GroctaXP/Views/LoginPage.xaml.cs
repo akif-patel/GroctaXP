@@ -1,7 +1,4 @@
-﻿using FFImageLoading.Forms;
-using FFImageLoading.Svg.Forms;
-using GroctaXP.Controls;
-using GroctaXP.Models;
+﻿using GroctaXP.Models;
 using GroctaXP.Resources;
 using Newtonsoft.Json;
 using System;
@@ -13,24 +10,28 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Auth;
 using Xamarin.Forms;
+
 using Xamarin.Forms.Xaml;
 
 namespace GroctaXP.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class TabWelcomeSplash : ContentPage
+    public partial class LoginPage : ContentPage
     {
         Account account;
         [Obsolete]
         AccountStore store;
 
-        public TabWelcomeSplash()
+        [Obsolete]
+        public LoginPage()
         {
             InitializeComponent();
             store = AccountStore.Create();
+           
+            // On<Xamarin.Forms.PlatformConfiguration.Android>().SetToolbarPlacement(Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ToolbarPlacement.Bottom);
         }
 
-        private void GoogleLogin_Clicked(object sender, EventArgs e)
+        void OnGoogleLoginClicked(object sender, EventArgs e)
         {
             string clientId = null;
             string redirectUri = null;

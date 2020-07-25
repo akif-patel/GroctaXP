@@ -62,7 +62,9 @@
                 IconSize="32"
                 VerticalOptions="End"
                 TextColor="{StaticResource ColorGoogleIcon}"
-                BackgroundColor="{StaticResource ColorWhite}"/>
+                BackgroundColor="{StaticResource ColorWhite}"
+                Clicked="GoogleLogin_Clicked"
+                />
 
             <grocta_control:ImageButton
                 Source="ui_facebook"
