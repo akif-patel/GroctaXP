@@ -103,6 +103,16 @@ namespace GroctaXP.Controls
         }
         #endregion
 
+        #region Property Theme
+        public static readonly BindableProperty ThemeProperty =
+            BindableProperty.Create("Theme", typeof(ButtonTheme), typeof(ImageButton));
+        public ButtonTheme Theme
+        {
+            get { return (ButtonTheme)GetValue(ThemeProperty); }
+            set { SetValue(ThemeProperty, value); }
+        }
+        #endregion
+
         public ImageButton()
         {
             this.Text = GroctaRes.Resources.ImageButtonText;
@@ -110,6 +120,7 @@ namespace GroctaXP.Controls
             this.IconSize = 26; 
             this.TintColor = Color.Transparent;
             this.TextColor = Utility.GetColorFromAppResources(GroctaRes.Resources.ColorPrimary);
+            this.Theme = ButtonTheme.Light;
         }
 
         public void RaiseCommand()
@@ -118,6 +129,12 @@ namespace GroctaXP.Controls
 
             if (Command != null && Command.CanExecute(CommandParams))
                 Command.Execute(CommandParams);
+        }
+
+        public enum ButtonTheme
+        {
+            Light,
+            Dark
         }
     }
 }

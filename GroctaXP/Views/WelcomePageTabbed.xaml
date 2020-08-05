@@ -11,5 +11,5 @@
     <!--Pages can be added as references or inline-->
     <grocta:TabWelcomeSplash Title="Splash" />
     <grocta:TabWelcomeUserInfo Title="User Info" />
-    <ContentPage Title="AddAddress" />
+    <grocta:TabWelcomeAddAddress Title="Add Address" />
 </grocta_control:TabLayout>

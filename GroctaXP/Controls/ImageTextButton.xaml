@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:grocta_control="clr-namespace:GroctaXP.Controls;assembly=GroctaXP"
+             xmlns:toucheff="clr-namespace:TouchEffect;assembly=TouchEffect"
+             mc:Ignorable="d"
+             x:Class="GroctaXP.Controls.ImageTextButton">
+  <ContentView.Content>
+    <Frame
+        x:Name="ButtonFrame"
+        BorderColor="{StaticResource ColorGrayDark}"
+        BackgroundColor="Transparent"
+        CornerRadius="0"
+        Padding="10"
+        HasShadow="False"
+        toucheff:TouchEff.NativeAnimation="True"
+        toucheff:TouchEff.NativeAnimationColor="{StaticResource ColorPrimaryRipple}">
+        <StackLayout 
+            x:Name="ButtonView"
+            Orientation="Horizontal">
+            <grocta_control:SvgImage
+                x:Name="ButtonIcon"
+                WidthRequest="26" 
+                HeightRequest="26" 
+                HorizontalOptions="Start" 
+                VerticalOptions="Center" 
+                Source="resource://GroctaXP.Resources.Icons.ai_edit_profile.svg"
+                Margin="0"
+                Color="{StaticResource ColorGray}"/>
+
+            <BoxView
+                x:Name="ButtonSeparator"
+                WidthRequest="1"
+                HeightRequest="26"
+                BackgroundColor="{StaticResource ColorGray}"/>
+            
+            <Label 
+                x:Name="LableTitle"
+                Text="Title" 
+                HorizontalTextAlignment="Center"
+                HorizontalOptions="FillAndExpand" 
+                VerticalOptions="Center" 
+                Style="{StaticResource LabelStyle.Large}"
+                TextColor="{StaticResource ColorGray}"/>
+            </StackLayout>
+        </Frame>
+   </ContentView.Content>
+</ContentView>

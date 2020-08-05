@@ -126,13 +126,91 @@
   <data name="AppFontThin" xml:space="preserve">
     <value>Celias.ttf</value>
   </data>
+  <data name="ButtonHelpSupport" xml:space="preserve">
+    <value>Help \ Support</value>
+  </data>
+  <data name="ButtonOrderDetails" xml:space="preserve">
+    <value>Order Details</value>
+  </data>
+  <data name="ButtonRateUs" xml:space="preserve">
+    <value>RATE US</value>
+  </data>
+  <data name="ButtonReferEarn" xml:space="preserve">
+    <value>REFER &amp; EARN</value>
+  </data>
+  <data name="ButtonUpdate" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="ColorGray" xml:space="preserve">
+    <value>ColorGray</value>
+  </data>
+  <data name="ColorGrayDark" xml:space="preserve">
+    <value>ColorGrayDark</value>
+  </data>
   <data name="ColorPrimary" xml:space="preserve">
     <value>ColorPrimary</value>
   </data>
   <data name="ColorPrimaryDark" xml:space="preserve">
     <value>ColorPrimaryDark</value>
   </data>
+  <data name="ColorPrimaryRipple" xml:space="preserve">
+    <value>ColorPrimaryRipple</value>
+  </data>
+  <data name="FlatButtonText" xml:space="preserve">
+    <value>Flat Button</value>
+  </data>
   <data name="ImageButtonText" xml:space="preserve">
     <value>Image Button</value>
+  </data>
+  <data name="LabelAppVersion" xml:space="preserve">
+    <value>APP VERSION</value>
+  </data>
+  <data name="LabelOrderNumber" xml:space="preserve">
+    <value>Order Number</value>
+  </data>
+  <data name="LabelRecentOrders" xml:space="preserve">
+    <value>RECENT ORDERS</value>
+  </data>
+  <data name="LabelStatusDelivered" xml:space="preserve">
+    <value>DELIVERED</value>
+  </data>
+  <data name="MainMenuDescGroctaSupport" xml:space="preserve">
+    <value>Contact Us, Feedback, FAQs &amp; Share</value>
+  </data>
+  <data name="MainMenuDescMyAccount" xml:space="preserve">
+    <value>Delivery Locations, Orders History, Quick Baskets &amp; Others</value>
+  </data>
+  <data name="MainMenuGroctaSupport" xml:space="preserve">
+    <value>Grocta Support</value>
+  </data>
+  <data name="MainMenuMyAccount" xml:space="preserve">
+    <value>My Account</value>
+  </data>
+  <data name="SubMenuContactUs" xml:space="preserve">
+    <value>Contact Us</value>
+  </data>
+  <data name="SubMenuDeliveryLocations" xml:space="preserve">
+    <value>Delivery Locations</value>
+  </data>
+  <data name="SubMenuFAQs" xml:space="preserve">
+    <value>Frequently Asked Questions (FAQs)</value>
+  </data>
+  <data name="SubMenuFavoritesGroceries" xml:space="preserve">
+    <value>Favorites Groceries</value>
+  </data>
+  <data name="SubMenuFeedback" xml:space="preserve">
+    <value>Feedback \ Review</value>
+  </data>
+  <data name="SubMenuOrderHistory" xml:space="preserve">
+    <value>Order History</value>
+  </data>
+  <data name="SubMenuQuickBaskets" xml:space="preserve">
+    <value>Quick Baskets</value>
+  </data>
+  <data name="SubMenuRefundWallet" xml:space="preserve">
+    <value>Refund Wallet</value>
+  </data>
+  <data name="SubMenuShareApp" xml:space="preserve">
+    <value>Share App</value>
   </data>
 </root>

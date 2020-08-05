@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:grocta_control="clr-namespace:GroctaXP.Controls;assembly=GroctaXP"
+             xmlns:toucheff="clr-namespace:TouchEffect;assembly=TouchEffect"
+             mc:Ignorable="d"
+             x:Class="GroctaXP.Controls.MainMenuItem">
+  <ContentView.Content>
+        <StackLayout 
+            x:Name="ViewMainMenu"
+            Orientation="Horizontal"
+            MinimumHeightRequest="200"
+            toucheff:TouchEff.NativeAnimation="True"
+            toucheff:TouchEff.NativeAnimationColor="{StaticResource ColorPrimaryRipple}"
+            Padding="15, 20, 15, 20">
+            <StackLayout.Effects>
+                <toucheff:TouchEff  Completed="TouchEff_Completed"/>
+            </StackLayout.Effects>
+            
+            <StackLayout 
+                Orientation="Vertical" 
+                HorizontalOptions="FillAndExpand"
+                Margin="0">
+                <Label 
+                    x:Name="LableTitle"
+                    Text="Title" 
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Center" 
+                    Style="{StaticResource LabelStyle.Large}"
+                    TextColor="{StaticResource ColorGrayDark}"/>
+
+                <Label 
+                    x:Name="LableDescription"
+                    Text="Description" 
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Center" 
+                    Style="{StaticResource LabelStyle.Small.Thin}"
+                    TextColor="{StaticResource ColorGray}"
+                    Margin="0, -6, 0, 0"/>
+            </StackLayout>
+
+            <grocta_control:SvgImage
+                x:Name="IconMenuState"
+                WidthRequest="16" 
+                HeightRequest="16" 
+                HorizontalOptions="Start" 
+                VerticalOptions="Center" 
+                Margin="0"
+                Color="{StaticResource ColorGray}"/>
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>

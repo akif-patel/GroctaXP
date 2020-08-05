@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:grocta_control="clr-namespace:GroctaXP.Controls;assembly=GroctaXP"
+             xmlns:toucheff="clr-namespace:TouchEffect;assembly=TouchEffect"
+             mc:Ignorable="d"
+             x:Class="GroctaXP.Controls.FlatButton">
+  <ContentView.Content>
+     <Frame
+        x:Name="ButtonFrame"
+        BackgroundColor="Transparent"
+        BorderColor="Transparent"
+        CornerRadius="4"
+        Padding="10, 5, 10, 5"
+        toucheff:TouchEff.NativeAnimation="True"
+        toucheff:TouchEff.NativeAnimationColor="{StaticResource ColorPrimaryRipple}">
+        <Label 
+            x:Name="LabelTitle"
+            Text="Title" 
+            Style="{StaticResource LabelStyle}"/>
+     </Frame>
+   </ContentView.Content>
+</ContentView>
