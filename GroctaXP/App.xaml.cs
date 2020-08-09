@@ -4,6 +4,7 @@ using Xamarin.Forms.Xaml;
 using GroctaXP.Services;
 using GroctaXP.Views;
 
+
 namespace GroctaXP
 {
     public partial class App : Application
@@ -15,7 +16,8 @@ namespace GroctaXP
 
             DependencyService.Register<MockDataStore>();
             //MainPage = new WelcomePageTabbed();
-            MainPage = new MainPageTabbed();
+            // MainPage = new MainPageTabbed();
+            MainPage = new TabWelcomeSplash();
         }
 
         protected override void OnStart()
