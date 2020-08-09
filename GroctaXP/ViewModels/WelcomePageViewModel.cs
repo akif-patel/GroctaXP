@@ -36,6 +36,22 @@ namespace GroctaXP.ViewModels
             }
         }
 
+        public ICommand CommandAddDeliveryAddress
+        {
+            get
+            {
+                return new Command
+                (
+                    (parameter) =>
+                    {
+                        var page = parameter as ContentPage;
+                        var parentPage = page.Parent as TabbedPage;
+                        parentPage.CurrentPage = parentPage.Children[2];
+                    }
+                );
+            }
+        }
+
         public WelcomePageViewModel()
         {
             Message = "Waiting";

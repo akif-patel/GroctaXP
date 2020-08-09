@@ -88,6 +88,69 @@ namespace GroctaXP.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Help \ Support.
+        /// </summary>
+        public static string ButtonHelpSupport {
+            get {
+                return ResourceManager.GetString("ButtonHelpSupport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order Details.
+        /// </summary>
+        public static string ButtonOrderDetails {
+            get {
+                return ResourceManager.GetString("ButtonOrderDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RATE US.
+        /// </summary>
+        public static string ButtonRateUs {
+            get {
+                return ResourceManager.GetString("ButtonRateUs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to REFER &amp; EARN.
+        /// </summary>
+        public static string ButtonReferEarn {
+            get {
+                return ResourceManager.GetString("ButtonReferEarn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update.
+        /// </summary>
+        public static string ButtonUpdate {
+            get {
+                return ResourceManager.GetString("ButtonUpdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ColorGray.
+        /// </summary>
+        public static string ColorGray {
+            get {
+                return ResourceManager.GetString("ColorGray", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ColorGrayDark.
+        /// </summary>
+        public static string ColorGrayDark {
+            get {
+                return ResourceManager.GetString("ColorGrayDark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ColorPrimary.
         /// </summary>
         public static string ColorPrimary {
@@ -106,11 +169,182 @@ namespace GroctaXP.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ColorPrimaryRipple.
+        /// </summary>
+        public static string ColorPrimaryRipple {
+            get {
+                return ResourceManager.GetString("ColorPrimaryRipple", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flat Button.
+        /// </summary>
+        public static string FlatButtonText {
+            get {
+                return ResourceManager.GetString("FlatButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Image Button.
         /// </summary>
         public static string ImageButtonText {
             get {
                 return ResourceManager.GetString("ImageButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to APP VERSION.
+        /// </summary>
+        public static string LabelAppVersion {
+            get {
+                return ResourceManager.GetString("LabelAppVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order Number.
+        /// </summary>
+        public static string LabelOrderNumber {
+            get {
+                return ResourceManager.GetString("LabelOrderNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RECENT ORDERS.
+        /// </summary>
+        public static string LabelRecentOrders {
+            get {
+                return ResourceManager.GetString("LabelRecentOrders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DELIVERED.
+        /// </summary>
+        public static string LabelStatusDelivered {
+            get {
+                return ResourceManager.GetString("LabelStatusDelivered", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact Us, Feedback, FAQs &amp; Share.
+        /// </summary>
+        public static string MainMenuDescGroctaSupport {
+            get {
+                return ResourceManager.GetString("MainMenuDescGroctaSupport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delivery Locations, Orders History, Quick Baskets &amp; Others.
+        /// </summary>
+        public static string MainMenuDescMyAccount {
+            get {
+                return ResourceManager.GetString("MainMenuDescMyAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grocta Support.
+        /// </summary>
+        public static string MainMenuGroctaSupport {
+            get {
+                return ResourceManager.GetString("MainMenuGroctaSupport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My Account.
+        /// </summary>
+        public static string MainMenuMyAccount {
+            get {
+                return ResourceManager.GetString("MainMenuMyAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact Us.
+        /// </summary>
+        public static string SubMenuContactUs {
+            get {
+                return ResourceManager.GetString("SubMenuContactUs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delivery Locations.
+        /// </summary>
+        public static string SubMenuDeliveryLocations {
+            get {
+                return ResourceManager.GetString("SubMenuDeliveryLocations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Frequently Asked Questions (FAQs).
+        /// </summary>
+        public static string SubMenuFAQs {
+            get {
+                return ResourceManager.GetString("SubMenuFAQs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Favorites Groceries.
+        /// </summary>
+        public static string SubMenuFavoritesGroceries {
+            get {
+                return ResourceManager.GetString("SubMenuFavoritesGroceries", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Feedback \ Review.
+        /// </summary>
+        public static string SubMenuFeedback {
+            get {
+                return ResourceManager.GetString("SubMenuFeedback", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order History.
+        /// </summary>
+        public static string SubMenuOrderHistory {
+            get {
+                return ResourceManager.GetString("SubMenuOrderHistory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quick Baskets.
+        /// </summary>
+        public static string SubMenuQuickBaskets {
+            get {
+                return ResourceManager.GetString("SubMenuQuickBaskets", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Refund Wallet.
+        /// </summary>
+        public static string SubMenuRefundWallet {
+            get {
+                return ResourceManager.GetString("SubMenuRefundWallet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Share App.
+        /// </summary>
+        public static string SubMenuShareApp {
+            get {
+                return ResourceManager.GetString("SubMenuShareApp", resourceCulture);
             }
         }
     }

@@ -23,7 +23,6 @@ namespace GroctaXP.Controls
 
             if (propertyName == ColorProperty.PropertyName)
             {
-                
                 ReplaceStringMap = new Dictionary<string, string>() { { "rgb(0,0,0)", this.GetColorAsRGB() } };
             }
         }

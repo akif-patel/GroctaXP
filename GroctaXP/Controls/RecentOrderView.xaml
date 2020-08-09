@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:grocta_control="clr-namespace:GroctaXP.Controls;assembly=GroctaXP"
+             xmlns:grocta_res="clr-namespace:GroctaXP.Resources"
+             mc:Ignorable="d"
+             x:Class="GroctaXP.Controls.RecentOrderView">
+  <ContentView.Content>
+    <Grid
+        Padding="0, 10, 0, 0"
+        HorizontalOptions="FillAndExpand"
+        RowSpacing="5"
+        ColumnSpacing="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!--Order ID-->
+        <Label 
+            Text="{x:Static grocta_res:Resources.LabelOrderNumber}"
+            HorizontalOptions="Start" 
+            Style="{StaticResource LabelStyle.Small.Thin}"
+            TextColor="{StaticResource ColorGrayLight}"
+            Grid.Column="0"
+            Grid.Row="0"/>
+        <Label 
+            x:Name="LabelOrderNumber"
+            Text="MTMB202007302002"
+            HorizontalOptions="Start" 
+            Style="{StaticResource LabelStyle}"
+            Grid.Column="0"
+            Grid.Row="1"
+            Margin="0, -5, 0, 0"/>
+
+        <!--Status-->
+        <Label 
+            x:Name="LabelOrderDate"
+            Text="2020-07-30 15:20"
+            HorizontalOptions="EndAndExpand" 
+            Style="{StaticResource LabelStyle.Small.Thin}"
+            TextColor="{StaticResource ColorGrayLight}"
+            Grid.Column="1"
+            Grid.Row="0"/>
+        <Label 
+            x:Name="LabelOrderStatus"
+            Text="{x:Static grocta_res:Resources.LabelStatusDelivered}"
+            HorizontalOptions="End" 
+            Style="{StaticResource LabelStyle.Small.Bold}"
+            TextColor="{StaticResource ColorGrayDark}"
+            Grid.Column="1"
+            Grid.Row="1"
+            Margin="0, -5, 0, 0"/>
+
+        <!--Separator-->
+        <BoxView
+            HeightRequest="1"
+            HorizontalOptions="FillAndExpand"
+            BackgroundColor="{StaticResource ColorGraySuperLight}"
+            Grid.Row="2"
+            Grid.ColumnSpan="2"/>
+
+        <!--Items-->
+        <Label 
+            Text="Amul Ghee (500g X 1)"
+            HorizontalOptions="Start" 
+            Style="{StaticResource LabelStyle}"
+            TextColor="{StaticResource ColorGrayLight}"
+            Grid.Column="0"
+            Grid.Row="3"/>
+        <Label 
+            Text="450/-"
+            HorizontalOptions="EndAndExpand" 
+            Style="{StaticResource LabelStyle}"
+            TextColor="{StaticResource ColorGrayLight}"
+            Grid.Column="1"
+            Grid.Row="3"/>
+        <Label 
+            Text="2 more itmes"
+            HorizontalOptions="Start" 
+            Style="{StaticResource LabelStyle.Small.Thin}"
+            TextColor="{StaticResource ColorGrayLight}"
+            Grid.Column="0"
+            Grid.Row="5"/>
+
+        <!--Separator-->
+        <BoxView
+            HeightRequest="1"
+            HorizontalOptions="FillAndExpand"
+            BackgroundColor="{StaticResource ColorGraySuperLight}"
+            Grid.Row="6"
+            Grid.ColumnSpan="2"/>
+
+        <!--Total-->
+        <Label 
+            x:Name="LabelQuantities"
+            Text="Quantities: 4"
+            HorizontalOptions="Start" 
+            Style="{StaticResource LabelStyle.Large}"
+            Grid.Column="0"
+            Grid.Row="7"/>
+        <Label 
+            x:Name="LabelAmount"
+            Text="Amount: 1180/-"
+            HorizontalOptions="EndAndExpand" 
+            Style="{StaticResource LabelStyle.Large.Bold}"
+            TextColor="{StaticResource ColorGrayDark}"
+            Grid.Column="1"
+            Grid.Row="7"
+            Margin="0, 0, 0, 10"/>
+
+        <!--Actions-->
+        <grocta_control:ImageTextButton
+            x:Name="ButtonOrderDetails"
+            Theme="Light"
+            Title="{x:Static grocta_res:Resources.ButtonOrderDetails}"
+            HideImage="True"
+            Grid.Column="0"
+            Grid.Row="8" />
+        <grocta_control:ImageTextButton
+            x:Name="ButtonOrderSupport"
+            Title="{x:Static grocta_res:Resources.ButtonHelpSupport}"
+            HideImage="True"
+            Grid.Column="1"
+            Grid.Row="8" />
+
+        <!--Separator-->
+        <BoxView
+            x:Name="ViewSeparator"
+            HeightRequest="2"
+            HorizontalOptions="FillAndExpand"
+            BackgroundColor="{StaticResource ColorGrayLight}"
+            Margin="0, 20, 0, 0"
+            Grid.Row="9"
+            Grid.ColumnSpan="2"/>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

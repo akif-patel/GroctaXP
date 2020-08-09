@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:grocta_control="clr-namespace:GroctaXP.Controls;assembly=GroctaXP"
+             xmlns:toucheff="clr-namespace:TouchEffect;assembly=TouchEffect"
+             mc:Ignorable="d"
+             x:Class="GroctaXP.Controls.SvgIconButton">
+  <ContentView.Content>
+     <Frame
+        x:Name="ButtonFrame"
+        BorderColor="Transparent"
+        BackgroundColor="Transparent"
+        CornerRadius="4"
+        Padding="4"
+        toucheff:TouchEff.NativeAnimation="True"
+        toucheff:TouchEff.NativeAnimationColor="{StaticResource ColorPrimaryRipple}">
+        <grocta_control:SvgImage
+            x:Name="ButtonIcon"
+            WidthRequest="20" 
+            HeightRequest="20" 
+            Margin="0"
+            Color="{StaticResource ColorPrimary}"/>
+        </Frame>
+   </ContentView.Content>
+</ContentView>

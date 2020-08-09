@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:grocta_control="clr-namespace:GroctaXP.Controls;assembly=GroctaXP"
+             xmlns:ncontrols="clr-namespace:NControl.Controls;assembly=NControl.Controls"
+             mc:Ignorable="d"
+             xmlns:vm="clr-namespace:GroctaXP.ViewModels"
+             x:Class="GroctaXP.Views.TabWelcomeAddAddress"
+             BackgroundColor="{StaticResource ColorWhite}"
+             x:Name="AddAddressPage">
+    <ContentPage.BindingContext>
+        <vm:WelcomePageViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            Orientation="Vertical"
+            Padding="30">
+
+            <Label 
+                Text="Add a Delivery Address" 
+                HorizontalTextAlignment="Center" 
+                HorizontalOptions="FillAndExpand" 
+                Style="{StaticResource LabelStyle.Large}"
+                TextColor="{StaticResource ColorPrimary}"
+                Margin="0, 0, 0, 30"/>
+
+            <StackLayout 
+                Orientation="Vertical"
+                VerticalOptions="StartAndExpand"
+                HorizontalOptions="Center"
+                Padding="20">
+                <ncontrols:FloatingLabelControl
+                    Placeholder="Flat\House #, Building\House Name *"
+                    Text="Flat\House #, Building\House Name"
+                    PlaceholderColor="{StaticResource ColorGray}"
+                    PlaceholderFocusedColor="{StaticResource ColorPrimary}"
+                    TextColor="{StaticResource ColorPrimary}"
+                    LabelFontFamily="Celias.ttf"
+                    FontFamily="Celias.ttf"
+                    LabelFontSize="13"
+                    PostfixColor="White"/>
+
+                <ncontrols:FloatingLabelControl
+                    Placeholder="Road and Area Name *"
+                    Text="Road and Area Name"
+                    PlaceholderColor="{StaticResource ColorGray}"
+                    PlaceholderFocusedColor="{StaticResource ColorPrimary}"
+                    TextColor="{StaticResource ColorPrimary}"
+                    LabelFontFamily="Celias.ttf"
+                    FontFamily="Celias.ttf"
+                    LabelFontSize="13"
+                    PostfixColor="White"/>
+
+                <ncontrols:FloatingLabelControl
+                    Placeholder="Nearby Landmark"
+                    Text="Nearby Landmark"
+                    PlaceholderColor="{StaticResource ColorGray}"
+                    PlaceholderFocusedColor="{StaticResource ColorPrimary}"
+                    TextColor="{StaticResource ColorPrimary}"
+                    LabelFontFamily="Celias.ttf"
+                    FontFamily="Celias.ttf"
+                    LabelFontSize="13"
+                    PostfixColor="White">
+                </ncontrols:FloatingLabelControl>
+
+                <ncontrols:FloatingLabelControl
+                    Placeholder="Locality *"
+                    Text="Locality"
+                    PlaceholderColor="{StaticResource ColorGray}"
+                    PlaceholderFocusedColor="{StaticResource ColorPrimary}"
+                    TextColor="{StaticResource ColorPrimary}"
+                    LabelFontFamily="Celias.ttf"
+                    FontFamily="Celias.ttf"
+                    LabelFontSize="13"
+                    PostfixColor="White"/>
+
+                <ncontrols:FloatingLabelControl
+                    Placeholder="City *"
+                    Text="City"
+                    PlaceholderColor="{StaticResource ColorGray}"
+                    PlaceholderFocusedColor="{StaticResource ColorPrimary}"
+                    TextColor="{StaticResource ColorPrimary}"
+                    LabelFontFamily="Celias.ttf"
+                    FontFamily="Celias.ttf"
+                    LabelFontSize="13"
+                    PostfixColor="White"/>
+
+                <ncontrols:FloatingLabelControl
+                    Placeholder="State *"
+                    Text="State"
+                    PlaceholderColor="{StaticResource ColorGray}"
+                    PlaceholderFocusedColor="{StaticResource ColorPrimary}"
+                    TextColor="{StaticResource ColorPrimary}"
+                    LabelFontFamily="Celias.ttf"
+                    FontFamily="Celias.ttf"
+                    LabelFontSize="13"
+                    PostfixColor="White"/>
+            </StackLayout>
+
+            <grocta_control:ImageButton
+                Source="ic_app_person_pin"
+                Text="FACEBOOK"
+                IconSize="32"
+                VerticalOptions="End"
+                TextColor="{StaticResource ColorWhite}"
+                BackgroundColor="{StaticResource ColorPrimary}"
+                Margin="0, 5, 0, 0"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

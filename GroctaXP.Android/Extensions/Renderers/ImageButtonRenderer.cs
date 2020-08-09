@@ -1,4 +1,5 @@
 ﻿using Android.Content;
+using Android.Support.Design.Resources;
 using Android.Views;
 using Android.Widget;
 using GroctaXP.Droid.Utils;
@@ -36,6 +37,7 @@ namespace GroctaXP.Droid.Extensions.Renderers
                 var padding = Utils.Converter.GetDpAsPixel(context, Element.InnerPadding);
                 buttonView.SetPadding(padding, padding, padding, padding);
 
+
                 buttonText = (TextView) rootLayout.FindViewById(Resource.Id.image_button_text);
                 buttonText.Text = Element.Text;
                 buttonText.SetTextColor(Element.TextColor.ToAndroid());
@@ -49,6 +51,7 @@ namespace GroctaXP.Droid.Extensions.Renderers
                 buttonIcon.LayoutParameters.Height = Utils.Converter.GetDpAsPixel(context, Element.IconSize);
                 buttonIcon.LayoutParameters.Width = Utils.Converter.GetDpAsPixel(context, Element.IconSize);
 
+                System.Diagnostics.Debug.WriteLine(Element.BackgroundColor.ToAndroid().ToString());
                 if (Element.TintColor != Color.Transparent)
                     buttonIcon.SetColorFilter(Element.TintColor.ToAndroid());
 

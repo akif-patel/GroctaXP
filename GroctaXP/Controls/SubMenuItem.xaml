@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:grocta_control="clr-namespace:GroctaXP.Controls;assembly=GroctaXP"
+             xmlns:toucheff="clr-namespace:TouchEffect;assembly=TouchEffect"
+             mc:Ignorable="d"
+             x:Class="GroctaXP.Controls.SubMenuItem">
+  <ContentView.Content>
+     <Frame
+        BorderColor="Transparent"
+        CornerRadius="4"
+        Padding="0">
+        <StackLayout 
+            x:Name="ViewSubMenu"
+            Orientation="Horizontal" 
+            HorizontalOptions="FillAndExpand" 
+            VerticalOptions="FillAndExpand"
+            toucheff:TouchEff.NativeAnimation="True"
+            toucheff:TouchEff.NativeAnimationColor="{StaticResource ColorPrimaryRipple}"
+            Padding="10, 0, 10, 0">
+            <grocta_control:SvgImage
+                x:Name="IconMenu"
+                Style="{StaticResource MenuIconStyle}"
+                Source="resource://GroctaXP.Resources.Icons.ai_delivery_locations.svg"/>
+            
+            <Label 
+                x:Name="LabelTitle"
+                Text="Title" 
+                Style="{StaticResource LabelStyle.MenuItem}"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="Center"/>
+            
+            <grocta_control:SvgImage
+                Style="{StaticResource MenuIconStyle.Forward}"/>
+        </StackLayout>
+     </Frame>
+   </ContentView.Content>
+</ContentView>

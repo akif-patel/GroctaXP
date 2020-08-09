@@ -39,10 +39,16 @@
     <item name="android:background">?android:attr/selectableItemBackground</item>
   </style>
 
-  <style name="Grocta_Button_Flat">
+  <style name="Grocta_Button_Background_Light">
     <item name="android:clickable">true</item>
     <item name="android:background">?android:attr/selectableItemBackground</item>
     <item name="colorControlHighlight">@color/colorPrimaryRipple</item>
     <item name="background">@color/colorWhite</item>
+  </style>
+  <style name="Grocta_Button_Background_Dark">
+    <item name="android:clickable">true</item>
+    <item name="android:background">?android:attr/selectableItemBackground</item>
+    <item name="colorControlHighlight">@color/colorGrayLight</item>
+    <item name="background">@color/colorPrimary</item>
   </style>
 </resources>

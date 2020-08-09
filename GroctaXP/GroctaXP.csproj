@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -36,6 +36,7 @@
     <None Remove="Resources\Icons\ai_arrow_up.svg" />
     <None Remove="Resources\Icons\ai_contact_us.svg" />
     <None Remove="Resources\Icons\ai_contact_us_outline.svg" />
+    <None Remove="Resources\Icons\ai_current_locality.svg" />
     <None Remove="Resources\Icons\ai_current_location.svg" />
     <None Remove="Resources\Icons\ai_delivery_location.svg" />
     <None Remove="Resources\Icons\ai_delivery_locations.svg" />
@@ -49,10 +50,12 @@
     <None Remove="Resources\Icons\ai_order_history.svg" />
     <None Remove="Resources\Icons\ai_quick_basket.svg" />
     <None Remove="Resources\Icons\ai_rate_us.svg" />
+    <None Remove="Resources\Icons\ai_refer.svg" />
     <None Remove="Resources\Icons\ai_share_app.svg" />
     <None Remove="Resources\Icons\ai_share_app_outline.svg" />
     <None Remove="Resources\Icons\ai_wallet.svg" />
-    <None Remove="Resources\Icons\ui_current_locality.svg" />
+    <None Remove="Resources\Icons\ui_facebook.svg" />
+    <None Remove="Resources\Icons\ui_google.svg" />
     <None Remove="Resources\Icons\ui_user_email.svg" />
     <None Remove="Resources\Icons\ui_user_phone.svg" />
   </ItemGroup>
@@ -81,10 +84,13 @@
     <EmbeddedResource Include="Resources\Icons\ai_feedback_outline.svg" />
     <EmbeddedResource Include="Resources\Icons\ai_order_history.svg" />
     <EmbeddedResource Include="Resources\Icons\ai_rate_us.svg" />
+    <EmbeddedResource Include="Resources\Icons\ai_refer.svg" />
     <EmbeddedResource Include="Resources\Icons\ai_share_app.svg" />
     <EmbeddedResource Include="Resources\Icons\ai_share_app_outline.svg" />
     <EmbeddedResource Include="Resources\Icons\ai_wallet.svg" />
-    <EmbeddedResource Include="Resources\Icons\ui_current_locality.svg" />
+    <EmbeddedResource Include="Resources\Icons\ai_current_locality.svg" />
+    <EmbeddedResource Include="Resources\Icons\ui_facebook.svg" />
+    <EmbeddedResource Include="Resources\Icons\ui_google.svg" />
     <EmbeddedResource Include="Resources\Icons\ui_user_email.svg" />
     <EmbeddedResource Include="Resources\Icons\ui_user_phone.svg" />
   </ItemGroup>
@@ -101,10 +107,22 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Controls\FlatButton.xaml.cs">
+      <DependentUpon>FlatButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\ImageTextButton.xaml.cs">
+      <DependentUpon>ImageTextButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\SvgIconButton.xaml.cs">
+      <DependentUpon>SvgIconButton.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Resources\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Views\TabWelcomeAddAddress.xaml.cs">
+      <DependentUpon>TabWelcomeAddAddress.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\TabWelcomeUserInfo.xaml.cs">
       <DependentUpon>TabWelcomeUserInfo.xaml</DependentUpon>
@@ -115,6 +133,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Controls\MainMenuItem.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Controls\RecentOrderView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Controls\SubMenuItem.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Resources\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
