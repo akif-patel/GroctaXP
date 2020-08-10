@@ -14230,6 +14230,9 @@ namespace GroctaXP.Droid
 			// aapt resource value: 0x7F070087
 			public const int xamarin_logo = 2131165319;
 			
+			// aapt resource value: 0x7F070085
+			public const int xamarin_logo = 2131165317;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -14872,6 +14875,9 @@ namespace GroctaXP.Droid
 			
 			// aapt resource value: 0x7F0800D1
 			public const int withText = 2131230929;
+			
+			// aapt resource value: 0x7F0800D2
+			public const int wrap_content = 2131230930;
 			
 			// aapt resource value: 0x7F0800D2
 			public const int wrap_content = 2131230930;

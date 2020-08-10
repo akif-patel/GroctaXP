@@ -94,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\Effects\ImageTintImplementation.cs" />
+    <Compile Include="Extensions\Renderers\CustomUrlSchemeInterceptorActivity.cs" />
     <Compile Include="Extensions\Renderers\GroctaTabLayoutRenderer.cs" />
     <Compile Include="Extensions\Renderers\GroctaTabbedPageRenderer.cs" />
     <Compile Include="Extensions\Renderers\ImageButtonRenderer.cs" />

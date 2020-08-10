@@ -3,6 +3,7 @@ using FFImageLoading.Svg.Forms;
 using GroctaXP.Controls;
 using GroctaXP.Models;
 using GroctaXP.Resources;
+using GroctaXP.Services;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -127,6 +128,8 @@ namespace GroctaXP.Views
                         // The users email address will be used to identify data in SimpleDB
                         string userJson = await response.GetResponseTextAsync();
                         user = JsonConvert.DeserializeObject<User>(userJson);
+                        IDataService dataService = new DataService();
+                        dataService.AddUser(user).Wait();
                     }
 
                     if (account != null)
