@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:grocta_control="clr-namespace:GroctaXP.Controls;assembly=GroctaXP"
+             xmlns:toucheff="clr-namespace:TouchEffect;assembly=TouchEffect"
+             mc:Ignorable="d"
+             x:Class="GroctaXP.Controls.ProductCategoryView">
+  <ContentView.Content>
+    <Frame
+        x:Name="FrameCategoryView"
+        BorderColor="#FBF6F5"
+        HasShadow="True"
+        CornerRadius="10"
+        Padding="5"
+        Margin="5"
+        toucheff:TouchEff.NativeAnimation="True"
+        toucheff:TouchEff.NativeAnimationColor="{StaticResource ColorPrimaryRipple}"
+        BackgroundColor="White">
+        <StackLayout
+            Orientation="Vertical">
+            <Label 
+                x:Name="LableCategoryName"
+                Text="Category Name"
+                HorizontalOptions="Start" 
+                Style="{StaticResource LabelStyle.Small}"
+                TextColor="{StaticResource ColorGray}"
+                Margin="5, 5, 5, 0"/>
+
+            <grocta_control:SvgImage
+                x:Name="ImageCategory"
+                Source="resource://GroctaXP.Resources.Icons.pi_foodgrains.svg"
+                HorizontalOptions="EndAndExpand"
+                WidthRequest="40"
+                Margin="0, 0, 5, 0"/>
+        </StackLayout>
+    </Frame>
+    </ContentView.Content>
+</ContentView>

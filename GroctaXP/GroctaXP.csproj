@@ -37,6 +37,7 @@
     <None Remove="Resources\Icons\ai_contact_us.svg" />
     <None Remove="Resources\Icons\ai_contact_us_outline.svg" />
     <None Remove="Resources\Icons\ai_current_locality.svg" />
+    <None Remove="Resources\Icons\ai_current_locality_outline.svg" />
     <None Remove="Resources\Icons\ai_current_location.svg" />
     <None Remove="Resources\Icons\ai_delivery_location.svg" />
     <None Remove="Resources\Icons\ai_delivery_locations.svg" />
@@ -54,6 +55,18 @@
     <None Remove="Resources\Icons\ai_share_app.svg" />
     <None Remove="Resources\Icons\ai_share_app_outline.svg" />
     <None Remove="Resources\Icons\ai_wallet.svg" />
+    <None Remove="Resources\Icons\pi_bakery.svg" />
+    <None Remove="Resources\Icons\pi_beverages.svg" />
+    <None Remove="Resources\Icons\pi_cleaning.svg" />
+    <None Remove="Resources\Icons\pi_cosmetics.svg" />
+    <None Remove="Resources\Icons\pi_dairy.svg" />
+    <None Remove="Resources\Icons\pi_foodgrains.svg" />
+    <None Remove="Resources\Icons\pi_meats.svg" />
+    <None Remove="Resources\Icons\pi_oils.svg" />
+    <None Remove="Resources\Icons\pi_pastas.svg" />
+    <None Remove="Resources\Icons\pi_pet_care.svg" />
+    <None Remove="Resources\Icons\pi_snacks.svg" />
+    <None Remove="Resources\Icons\pi_spices.svg" />
     <None Remove="Resources\Icons\ui_facebook.svg" />
     <None Remove="Resources\Icons\ui_google.svg" />
     <None Remove="Resources\Icons\ui_user_email.svg" />
@@ -61,6 +74,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Resources\Icons\ai_current_locality_outline.svg" />
     <EmbeddedResource Include="Resources\Icons\ai_quick_basket.svg" />
   </ItemGroup>
 
@@ -89,6 +103,18 @@
     <EmbeddedResource Include="Resources\Icons\ai_share_app_outline.svg" />
     <EmbeddedResource Include="Resources\Icons\ai_wallet.svg" />
     <EmbeddedResource Include="Resources\Icons\ai_current_locality.svg" />
+    <EmbeddedResource Include="Resources\Icons\pi_bakery.svg" />
+    <EmbeddedResource Include="Resources\Icons\pi_beverages.svg" />
+    <EmbeddedResource Include="Resources\Icons\pi_cleaning.svg" />
+    <EmbeddedResource Include="Resources\Icons\pi_cosmetics.svg" />
+    <EmbeddedResource Include="Resources\Icons\pi_dairy.svg" />
+    <EmbeddedResource Include="Resources\Icons\pi_foodgrains.svg" />
+    <EmbeddedResource Include="Resources\Icons\pi_meats.svg" />
+    <EmbeddedResource Include="Resources\Icons\pi_oils.svg" />
+    <EmbeddedResource Include="Resources\Icons\pi_pastas.svg" />
+    <EmbeddedResource Include="Resources\Icons\pi_pet_care.svg" />
+    <EmbeddedResource Include="Resources\Icons\pi_snacks.svg" />
+    <EmbeddedResource Include="Resources\Icons\pi_spices.svg" />
     <EmbeddedResource Include="Resources\Icons\ui_facebook.svg" />
     <EmbeddedResource Include="Resources\Icons\ui_google.svg" />
     <EmbeddedResource Include="Resources\Icons\ui_user_email.svg" />
@@ -136,6 +162,9 @@
     <EmbeddedResource Update="Controls\MainMenuItem.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Controls\ProductCategoryView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Controls\RecentOrderView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -147,6 +176,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\MainPageTabbed.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\TabHomeMain.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\TabHomeMenu.xaml">

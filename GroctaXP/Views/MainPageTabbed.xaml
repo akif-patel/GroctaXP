@@ -11,9 +11,8 @@
             SelectedTabColor="{StaticResource ColorPrimary}"
             UnselectedTabColor="{StaticResource ColorGray}">
     <!--Pages can be added as references or inline-->
-    <!--<ContentPage Title="MENU" IconImageSource="ai_menu_person.png" />-->
+    <grocta:TabHomeMain Title="HOME" IconImageSource="ai_tab_store_outline.png" />
     <grocta:TabHomeMenu Title="MENU" IconImageSource="ai_tab_menu.png" />
-    <ContentPage Title="GROCTA" IconImageSource="ai_tab_store_outline.png" />
     <ContentPage Title="SEARCH" IconImageSource="ai_tab_search.png" />
     <ContentPage Title="BASKET" IconImageSource="ai_tab_basket_outline.png" />
    

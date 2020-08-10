@@ -7,7 +7,7 @@ namespace GroctaXP.Controls
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainMenuItem : ContentView
     {
-        private const string PATH_ICON_ARROW_UP = "resource://GroctaXP.Resources.Icons.ai_arrow_up.svg";
+        //private const string PATH_ICON_ARROW_UP = "resource://GroctaXP.Resources.Icons.ai_arrow_up.svg";
         private const string PATH_ICON_ARROW_DOWN = "resource://GroctaXP.Resources.Icons.ai_arrow_down.svg";
 
         #region Property Title
@@ -121,18 +121,20 @@ namespace GroctaXP.Controls
             }
         }
 
-        public void Expand()
+        async public void Expand()
         {
             this.State = MenuState.Expanded;
-            this.LableDescription.IsVisible = false;
-            this.IconMenuState.Source = PATH_ICON_ARROW_UP;
+            await this.IconMenuState.RotateTo(180, 150);
+            this.LableDescription.Text = string.Empty;
+            //this.IconMenuState.Source = PATH_ICON_ARROW_UP;
         }
 
-        public void Collapse()
+        async public void Collapse()
         {
             this.State = MenuState.Collapsed;
-            this.LableDescription.IsVisible = true;
-            this.IconMenuState.Source = PATH_ICON_ARROW_DOWN;
+            await this.IconMenuState.RotateTo(0, 150);
+            this.LableDescription.Text = this.Description;
+            //this.IconMenuState.Source = PATH_ICON_ARROW_DOWN;
         }
         #endregion
 

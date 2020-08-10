@@ -112,17 +112,17 @@
                         <grocta_control:MainMenuItem 
                             Title="{x:Static grocta_res:Resources.MainMenuMyAccount}"
                             Description="{x:Static grocta_res:Resources.MainMenuDescMyAccount}"
-                            Command="{Binding ShowHideMyAccountSubMenuCommand}" />
+                            Command="{Binding ShowHideMyAccountSubMenuCommand}"/>
                         
                         <!-- Menu -->
                         <StackLayout
                             x:Name="ViewMenuMyAccount_All"
                             Orientation="Vertical" 
                             VerticalOptions="Start"
-                            Margin="0, -15, 0, 0"
+                            Margin="0, -30, 0, 0"
                             Padding="15, 0, 15, 0"
                             IsVisible="{Binding IsVisibleMyAccountSubMenu}">
-
+                            
                             <!-- Delivery Locations -->
                             <grocta_control:SubMenuItem 
                                 Title="{x:Static grocta_res:Resources.SubMenuDeliveryLocations}"
@@ -165,7 +165,7 @@
                     <!-- Help and Support -->
                     <StackLayout
                         Orientation="Vertical" 
-                        Margin="0, -6, 0, 0"
+                        Margin="0, -5, 0, 0"
                         VerticalOptions="Start">
                         <grocta_control:MainMenuItem 
                             Title="{x:Static grocta_res:Resources.MainMenuGroctaSupport}"
@@ -176,7 +176,7 @@
                         <StackLayout
                             x:Name="ViewMenuSupport_All"
                             Orientation="Vertical" 
-                            Margin="0, -15, 0, 0"
+                            Margin="0, -30, 0, 0"
                             Padding="15, 0, 15, 0"
                             VerticalOptions="Start"
                             IsVisible="{Binding IsVisibleGroctaSupportSubMenu}">

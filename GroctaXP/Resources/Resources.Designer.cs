@@ -268,6 +268,114 @@ namespace GroctaXP.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Deserts &amp; Beverages.
+        /// </summary>
+        public static string ProductCategoryBeverages {
+            get {
+                return ResourceManager.GetString("ProductCategoryBeverages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Household Cleaning.
+        /// </summary>
+        public static string ProductCategoryCleaning {
+            get {
+                return ResourceManager.GetString("ProductCategoryCleaning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bakery &amp; Cakes.
+        /// </summary>
+        public static string ProductCategoryConfectionary {
+            get {
+                return ResourceManager.GetString("ProductCategoryConfectionary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dairy Products.
+        /// </summary>
+        public static string ProductCategoryDairy {
+            get {
+                return ResourceManager.GetString("ProductCategoryDairy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Foodgrains &amp; Pulses.
+        /// </summary>
+        public static string ProductCategoryFoodgrains {
+            get {
+                return ResourceManager.GetString("ProductCategoryFoodgrains", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hygiene &amp; Cosmetics.
+        /// </summary>
+        public static string ProductCategoryHygiene {
+            get {
+                return ResourceManager.GetString("ProductCategoryHygiene", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Eggs &amp; Meat.
+        /// </summary>
+        public static string ProductCategoryMeats {
+            get {
+                return ResourceManager.GetString("ProductCategoryMeats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edible Oils &amp; Ghee.
+        /// </summary>
+        public static string ProductCategoryOils {
+            get {
+                return ResourceManager.GetString("ProductCategoryOils", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pastas &amp; Noodles.
+        /// </summary>
+        public static string ProductCategoryPastas {
+            get {
+                return ResourceManager.GetString("ProductCategoryPastas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pet Care &amp; Foods.
+        /// </summary>
+        public static string ProductCategoryPetCare {
+            get {
+                return ResourceManager.GetString("ProductCategoryPetCare", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Biscuits &amp; Snacks.
+        /// </summary>
+        public static string ProductCategorySnacks {
+            get {
+                return ResourceManager.GetString("ProductCategorySnacks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Masala &amp; Spices.
+        /// </summary>
+        public static string ProductCategorySpices {
+            get {
+                return ResourceManager.GetString("ProductCategorySpices", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contact Us.
         /// </summary>
         public static string SubMenuContactUs {

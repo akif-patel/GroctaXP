@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:grocta_control="clr-namespace:GroctaXP.Controls;assembly=GroctaXP"
+             xmlns:grocta_res="clr-namespace:GroctaXP.Resources"
+             xmlns:toucheff="clr-namespace:TouchEffect;assembly=TouchEffect"
+             mc:Ignorable="d"
+             xmlns:vm="clr-namespace:GroctaXP.ViewModels"
+             x:Class="GroctaXP.Views.TabHomeMain"
+             BackgroundColor="{StaticResource ColorWhite}">
+    <ContentPage.BindingContext>
+        <vm:TabHomeMainViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <!-- Delivery Location -->
+            <StackLayout 
+                Orientation="Horizontal" 
+                Padding="15"
+                HorizontalOptions="FillAndExpand"
+                toucheff:TouchEff.NativeAnimation="True"
+                toucheff:TouchEff.NativeAnimationColor="{StaticResource ColorPrimaryRipple}">
+                <StackLayout 
+                    Orientation="Vertical"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Start"
+                    Padding="0">
+                    <Label
+                        Text="Delivering to,"
+                        HorizontalTextAlignment="Start"
+                        HorizontalOptions="Start"
+                        VerticalOptions="StartAndExpand"
+                        TextColor="{StaticResource ColorGrayLight}" 
+                        Margin="0, 0, 0, 0"
+                        Style="{StaticResource LabelStyle.Small}"/>
+
+                    <Label
+                        Text="312, Rehmat Manzil, Kashimira, Mira Road (E)"
+                        HorizontalTextAlignment="Start"
+                        HorizontalOptions="Start"
+                        VerticalOptions="StartAndExpand"
+                        TextColor="{StaticResource ColorPrimary}" 
+                        Margin="0, -6, 0, 0"
+                        Style="{StaticResource LabelStyle.Bold}"/>
+                </StackLayout>
+
+                <grocta_control:SvgImage
+                    x:Name="ButtonIcon"
+                    WidthRequest="20" 
+                    HeightRequest="20" 
+                    Source="resource://GroctaXP.Resources.Icons.ai_current_locality_outline.svg"
+                    Margin="0"
+                    Color="{StaticResource ColorPrimary}"
+                    HorizontalOptions="EndAndExpand"
+                    VerticalOptions="Center"/>
+            </StackLayout>
+            <BoxView
+                HeightRequest="1"
+                Margin="0, -6, 0, 0"
+                BackgroundColor="{StaticResource ColorGraySuperLight}"/>
+
+            <ScrollView
+                Orientation="Vertical"
+                Padding="0"
+                Margin="0, -6, 0, 0">
+                <StackLayout 
+                    Orientation="Vertical"
+                    Padding="10">
+                    <!-- Product Categories -->
+                    <Grid
+                        HorizontalOptions="FillAndExpand"
+                        RowSpacing="0"
+                        ColumnSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- First Row -->
+                        <grocta_control:ProductCategoryView
+                            x:Name="CategoryFoodgrains"
+                            CategoryName="{x:Static grocta_res:Resources.ProductCategoryFoodgrains}"
+                            Image="resource://GroctaXP.Resources.Icons.pi_foodgrains.svg"
+                            Grid.Row="0"
+                            Grid.Column="0"/>
+                        <grocta_control:ProductCategoryView
+                            x:Name="CategorySpices"
+                            CategoryName="{x:Static grocta_res:Resources.ProductCategorySpices}"
+                            Image="resource://GroctaXP.Resources.Icons.pi_spices.svg"
+                            Grid.Row="0"
+                            Grid.Column="1"/>
+                        <grocta_control:ProductCategoryView
+                            x:Name="CategoryOils"
+                            CategoryName="{x:Static grocta_res:Resources.ProductCategoryOils}"
+                            Image="resource://GroctaXP.Resources.Icons.pi_oils.svg"
+                            Grid.Row="0"
+                            Grid.Column="2"/>
+                        <grocta_control:ProductCategoryView
+                            x:Name="CategoryMeats"
+                            CategoryName="{x:Static grocta_res:Resources.ProductCategoryMeats}"
+                            Image="resource://GroctaXP.Resources.Icons.pi_meats.svg"
+                            Grid.Row="0"
+                            Grid.Column="3"/>
+
+                        <!-- Second Row -->
+                        <grocta_control:ProductCategoryView
+                            x:Name="CategoryCleaning"
+                            CategoryName="{x:Static grocta_res:Resources.ProductCategoryCleaning}"
+                            Image="resource://GroctaXP.Resources.Icons.pi_cleaning.svg"
+                            Grid.Row="1"
+                            Grid.Column="0"/>
+                        <grocta_control:ProductCategoryView
+                            x:Name="CategoryDairy"
+                            CategoryName="{x:Static grocta_res:Resources.ProductCategoryDairy}"
+                            Image="resource://GroctaXP.Resources.Icons.pi_dairy.svg"
+                            Grid.Row="1"
+                            Grid.Column="1"/>
+                        <grocta_control:ProductCategoryView
+                            x:Name="CategorySnacks"
+                            CategoryName="{x:Static grocta_res:Resources.ProductCategorySnacks}"
+                            Image="resource://GroctaXP.Resources.Icons.pi_snacks.svg"
+                            Grid.Row="1"
+                            Grid.Column="2"/>
+                        <grocta_control:ProductCategoryView
+                            x:Name="CategoryBeverages"
+                            CategoryName="{x:Static grocta_res:Resources.ProductCategoryBeverages}"
+                            Image="resource://GroctaXP.Resources.Icons.pi_beverages.svg"
+                            Grid.Row="1"
+                            Grid.Column="3"/>
+
+                        <!-- Third Row -->
+                        <grocta_control:ProductCategoryView
+                            x:Name="CategoryConfectionary"
+                            CategoryName="{x:Static grocta_res:Resources.ProductCategoryConfectionary}"
+                            Image="resource://GroctaXP.Resources.Icons.pi_bakery.svg"
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            IsVisible="{Binding IsVisibleThirdRow}"/>
+                        <grocta_control:ProductCategoryView
+                            x:Name="CategoryPersonalHygiene"
+                            CategoryName="{x:Static grocta_res:Resources.ProductCategoryHygiene}"
+                            Image="resource://GroctaXP.Resources.Icons.pi_cosmetics.svg"
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            IsVisible="{Binding IsVisibleThirdRow}"/>
+                        <grocta_control:ProductCategoryView
+                            x:Name="CategoryPastas"
+                            CategoryName="{x:Static grocta_res:Resources.ProductCategoryPastas}"
+                            Image="resource://GroctaXP.Resources.Icons.pi_pastas.svg"
+                            Grid.Row="2"
+                            Grid.Column="2"
+                            IsVisible="{Binding IsVisibleThirdRow}"/>
+                        <grocta_control:ProductCategoryView
+                            x:Name="CategoryPetCare"
+                            CategoryName="{x:Static grocta_res:Resources.ProductCategoryPetCare}"
+                            Image="resource://GroctaXP.Resources.Icons.pi_pet_care.svg"
+                            Grid.Row="2"
+                            Grid.Column="3"
+                            IsVisible="{Binding IsVisibleThirdRow}"/>
+
+                        <Frame
+                            BorderColor="Transparent"
+                            HasShadow="False"
+                            Padding="10, 2, 10, 2"
+                            toucheff:TouchEff.NativeAnimation="True"
+                            toucheff:TouchEff.NativeAnimationColor="{StaticResource ColorPrimaryRipple}"
+                            toucheff:TouchEff.Command="{Binding ShowHideMoreCategoriesCommand}"
+                            Grid.Row="3"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="4"
+                            HorizontalOptions="Center" 
+                            Margin="0, 0, 0, 0"
+                            CornerRadius="5">
+                            <grocta_control:SvgImage
+                                WidthRequest="14" 
+                                HeightRequest="14" 
+                                Color="{StaticResource ColorGrayLight}"
+                                Source="{Binding ExpandCollapseIcon}"/>
+                        </Frame>
+                    </Grid>
+
+                    <!-- Ad Banners -->
+                    <CarouselView
+                        ItemsSource="{Binding AdBanners}"
+                        PeekAreaInsets="0"
+                        VerticalOptions="Start"
+                        HeightRequest="200"
+                        Margin="-15, 0, -15, 0">
+                        <CarouselView.ItemsLayout>
+                            <LinearItemsLayout 
+                                Orientation="Horizontal"
+                                ItemSpacing="0" />
+                        </CarouselView.ItemsLayout>
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout>
+                                <Frame 
+                                    HasShadow="True"
+                                    BorderColor="White"
+                                    CornerRadius="0"
+                                    Margin="0"
+                                    Padding="0">
+                                    <Image 
+                                        Source="{Binding ImageURL}"
+                                        Aspect="AspectFill"/>
+                                </Frame>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

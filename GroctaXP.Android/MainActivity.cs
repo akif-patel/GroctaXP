@@ -10,6 +10,7 @@ using NControl.Controls.Droid;
 using FFImageLoading.Cache;
 using FFImageLoading.Forms.Platform;
 using GroctaXP.Droid.Extensions.Renderers;
+using Xamarin.Forms;
 
 namespace GroctaXP.Droid
 {
@@ -23,6 +24,7 @@ namespace GroctaXP.Droid
 
             base.OnCreate(savedInstanceState);
 
+            Forms.SetFlags("CollectionView_Experimental");
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             global::Xamarin.Auth.Presenters.XamarinAndroid.AuthenticationConfiguration.Init(this, savedInstanceState);

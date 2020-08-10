@@ -24,7 +24,7 @@
             <Color x:Key="ColorPrimaryDark">#982C24</Color>
             <Color x:Key="ColorPrimaryOrange">#EA8204</Color>
             <Color x:Key="ColorPrimaryPeriwinkle">#ABB5D4</Color>
-            <Color x:Key="ColorPrimaryRipple">#DFAEAA</Color>
+            <Color x:Key="ColorPrimaryRipple">#E9C6C3</Color>
             <Color x:Key="ColorWhite">#FFFFFF</Color>
             <Color x:Key="ColorGray">#555557</Color>
             <!--<Color x:Key="ColorGray">#909090</Color>#424245-->

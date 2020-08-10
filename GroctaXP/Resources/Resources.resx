@@ -186,6 +186,42 @@
   <data name="MainMenuMyAccount" xml:space="preserve">
     <value>My Account</value>
   </data>
+  <data name="ProductCategoryBeverages" xml:space="preserve">
+    <value>Deserts &amp; Beverages</value>
+  </data>
+  <data name="ProductCategoryCleaning" xml:space="preserve">
+    <value>Household Cleaning</value>
+  </data>
+  <data name="ProductCategoryConfectionary" xml:space="preserve">
+    <value>Bakery &amp; Cakes</value>
+  </data>
+  <data name="ProductCategoryDairy" xml:space="preserve">
+    <value>Dairy Products</value>
+  </data>
+  <data name="ProductCategoryFoodgrains" xml:space="preserve">
+    <value>Foodgrains &amp; Pulses</value>
+  </data>
+  <data name="ProductCategoryHygiene" xml:space="preserve">
+    <value>Hygiene &amp; Cosmetics</value>
+  </data>
+  <data name="ProductCategoryMeats" xml:space="preserve">
+    <value>Eggs &amp; Meat</value>
+  </data>
+  <data name="ProductCategoryOils" xml:space="preserve">
+    <value>Edible Oils &amp; Ghee</value>
+  </data>
+  <data name="ProductCategoryPastas" xml:space="preserve">
+    <value>Pastas &amp; Noodles</value>
+  </data>
+  <data name="ProductCategoryPetCare" xml:space="preserve">
+    <value>Pet Care &amp; Foods</value>
+  </data>
+  <data name="ProductCategorySnacks" xml:space="preserve">
+    <value>Biscuits &amp; Snacks</value>
+  </data>
+  <data name="ProductCategorySpices" xml:space="preserve">
+    <value>Masala &amp; Spices</value>
+  </data>
   <data name="SubMenuContactUs" xml:space="preserve">
     <value>Contact Us</value>
   </data>
